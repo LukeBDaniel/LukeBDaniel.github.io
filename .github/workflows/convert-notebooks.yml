@@ -44,21 +44,24 @@ jobs:
             # Add Jekyll front matter
             sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$output_md"
 
-            # Remove all code blocks except those with '# INCLUDE'
-            python3 - <<EOF
-import re
+      - name: Clean up Markdown (keep only tagged code)
+        run: |
+          for mdfile in _posts/*.md; do
+            python3 - "$mdfile" <<'EOF'
+import sys
+md_path = sys.argv[1]
 
 in_code = False
 keep = False
-out = []
+output = []
+block = []
 
-with open("$output_md") as f:
-    block = []
+with open(md_path) as f:
     for line in f:
         if line.startswith("```"):
             if in_code and keep:
-                out.extend(block)
-                out.append(line)
+                output.extend(block)
+                output.append(line)
             elif not in_code:
                 block = [line]
             in_code = not in_code
@@ -69,12 +72,11 @@ with open("$output_md") as f:
             if "# INCLUDE" in line:
                 keep = True
         else:
-            out.append(line)
+            output.append(line)
 
-with open("$output_md", "w") as f:
-    f.writelines(out)
+with open(md_path, "w") as f:
+    f.writelines(output)
 EOF
-
           done
 
       - name: Commit and push posts
