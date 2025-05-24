@@ -33,15 +33,18 @@ jobs:
             # Convert notebook to markdown
             jupyter nbconvert "$nb" --to markdown --output "$base" --output-dir _posts/
 
-            # Extract title from markdown
+            # Extract title and date from markdown (default if missing)
             title=$(grep -m1 '^# Title:' "$output_md" | sed 's/^# Title: //')
+            date=$(grep -m1 '^# Date:' "$output_md" | sed 's/^# Date: //')
             title=${title:-${base//-/ }}
-
-            # Remove title line from markdown
+            date=${date:-$(date +%Y-%m-%d)}
+            
+            # Remove title and date lines from markdown
             sed -i '/^# Title:/d' "$output_md"
-
-            # Add Jekyll front matter
-            sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$output_md"
+            sed -i '/^# Date:/d' "$output_md"
+            
+            # Add front matter
+            sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\ndate: $date\n---\n\n/" "$output_md"
           done
 
       - name: Filter untagged code blocks
