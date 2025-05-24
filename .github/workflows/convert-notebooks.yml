@@ -44,7 +44,7 @@ jobs:
             # Add Jekyll front matter
             sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$output_md"
 
-            # Remove all code blocks except those with '# TAG: show'
+            # Remove all code blocks except those with '# INCLUDE'
             python3 - <<EOF
 import re
 
@@ -66,7 +66,7 @@ with open("$output_md") as f:
             continue
         if in_code:
             block.append(line)
-            if "# TAG: show" in line:
+            if "# INCLUDE" in line:
                 keep = True
         else:
             out.append(line)
