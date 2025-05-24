@@ -1,0 +1,39 @@
+name: Convert Notebooks to Markdown
+
+on:
+  push:
+    paths:
+      - 'notebooks/**/*.ipynb'
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Jupyter
+        run: |
+          pip install nbconvert
+
+      - name: Convert notebooks to Markdown
+        run: |
+          mkdir -p _posts
+          for nb in notebooks/*.ipynb; do
+            base=$(basename "$nb" .ipynb)
+            jupyter nbconvert "$nb" --to markdown --output "_posts/${base}" --output-dir .
+            sed -i '1s/^/---\nlayout: post\ntitle: "'"$base"'"\n---\n\n/' "_posts/${base}.md"
+          done
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add _posts/
+          git commit -m "Convert notebooks to posts [auto]" || echo "No changes"
+          git push
