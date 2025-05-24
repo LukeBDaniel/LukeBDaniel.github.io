@@ -20,24 +20,32 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Jupyter
+      - name: Install nbconvert and pygments
         run: |
-          pip install nbconvert
+          pip install nbconvert jupyterlab-pygments
 
-      - name: Convert notebooks to Markdown
+      - name: Convert notebooks to Markdown posts
         run: |
           mkdir -p _posts
           for nb in notebooks/*.ipynb; do
             base=$(basename "$nb" .ipynb)
-            jupyter nbconvert "$nb" --to markdown --output "_posts/${base}" --output-dir .
-            title=$(grep -m1 '^# Title:' "$out" | sed 's/^# Title: //')
-            title=${title:-${base//-/ }}
-            sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$out"          done
+            output_md="_posts/$base.md"
 
-      - name: Commit and push changes
+            # Convert notebook to markdown
+            jupyter nbconvert "$nb" --to markdown --output "$base" --output-dir _posts/
+
+            # Extract title from markdown if available
+            title=$(grep -m1 '^# Title:' "$output_md" | sed 's/^# Title: //')
+            title=${title:-${base//-/ }}
+
+            # Add front matter to the markdown post
+            sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$output_md"
+          done
+
+      - name: Commit and push posts
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add _posts/
-          git commit -m "Convert notebooks to posts [auto]" || echo "No changes"
+          git commit -m "Auto-convert notebooks to posts" || echo "No changes to commit"
           git push
