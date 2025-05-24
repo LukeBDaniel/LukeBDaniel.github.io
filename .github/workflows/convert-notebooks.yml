@@ -12,7 +12,7 @@ jobs:
   convert:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -20,11 +20,10 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install nbconvert
-        run: |
-          pip install nbconvert jupyterlab-pygments
+      - name: Install nbconvert and pygments
+        run: pip install nbconvert jupyterlab-pygments
 
-      - name: Convert and process notebooks
+      - name: Convert notebooks to Markdown
         run: |
           mkdir -p _posts
           for nb in notebooks/*.ipynb; do
@@ -43,8 +42,9 @@ jobs:
 
             # Add Jekyll front matter
             sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$output_md"
+          done
 
-      - name: Keep only tagged code blocks
+      - name: Filter untagged code blocks
         run: |
           for mdfile in _posts/*.md; do
             python3 scripts/filter_code_blocks.py "$mdfile"
@@ -55,5 +55,6 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add _posts/
+          git add _posts/*_files/ || true
           git commit -m "Convert notebooks to posts [auto]" || echo "No changes"
           git push
