@@ -20,7 +20,7 @@ with open(md_path) as f:
             continue
         if in_code:
             block.append(line)
-            if "# TAG: keep_code" in line:
+            if "# INCLUDE" in line:
                 keep = True
         else:
             output.append(line)
