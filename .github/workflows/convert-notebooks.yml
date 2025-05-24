@@ -20,11 +20,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install nbconvert and pygments
+      - name: Install nbconvert
         run: |
           pip install nbconvert jupyterlab-pygments
 
-      - name: Convert notebooks to Markdown posts
+      - name: Convert and process notebooks
         run: |
           mkdir -p _posts
           for nb in notebooks/*.ipynb; do
@@ -34,15 +34,47 @@ jobs:
             # Convert notebook to markdown
             jupyter nbconvert "$nb" --to markdown --output "$base" --output-dir _posts/
 
-            # Extract title from markdown if available
+            # Extract title from markdown
             title=$(grep -m1 '^# Title:' "$output_md" | sed 's/^# Title: //')
             title=${title:-${base//-/ }}
 
-            # Remove the title line from the markdown file
+            # Remove title line from markdown
             sed -i '/^# Title:/d' "$output_md"
 
-            # Add front matter to the markdown post
+            # Add Jekyll front matter
             sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$output_md"
+
+            # Remove all code blocks except those with '# TAG: show'
+            python3 - <<EOF
+import re
+
+in_code = False
+keep = False
+out = []
+
+with open("$output_md") as f:
+    block = []
+    for line in f:
+        if line.startswith("```"):
+            if in_code and keep:
+                out.extend(block)
+                out.append(line)
+            elif not in_code:
+                block = [line]
+            in_code = not in_code
+            keep = False
+            continue
+        if in_code:
+            block.append(line)
+            if "# TAG: show" in line:
+                keep = True
+        else:
+            out.append(line)
+
+with open("$output_md", "w") as f:
+    f.writelines(out)
+EOF
+
           done
 
       - name: Commit and push posts
@@ -50,5 +82,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add _posts/
-          git commit -m "Auto-convert notebooks to posts" || echo "No changes to commit"
+          git commit -m "Convert notebooks to posts [auto]" || echo "No changes"
           git push
