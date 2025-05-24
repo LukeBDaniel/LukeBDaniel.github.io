@@ -1,8 +1,16 @@
 ---
 layout: default
-title: Welcome
+title: Home
 ---
 
-# Hello, GitHub Pages!
+# Welcome to My Jekyll Blog
 
-This is your Jekyll site served directly by GitHub Pages.
+Here are my latest posts:
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}
+    </li>
+  {% endfor %}
+</ul>
