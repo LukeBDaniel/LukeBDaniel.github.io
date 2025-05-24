@@ -11,7 +11,9 @@ with open(md_path) as f:
     for line in f:
         if line.startswith("```"):
             if in_code and keep:
-                output.extend(block)
+                # Remove the tag line before writing
+                cleaned_block = [l for l in block if "# INCLUDE" not in l]
+                output.extend(cleaned_block)
                 output.append(line)
             elif not in_code:
                 block = [line]
