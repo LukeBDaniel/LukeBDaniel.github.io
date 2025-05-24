@@ -30,8 +30,9 @@ jobs:
           for nb in notebooks/*.ipynb; do
             base=$(basename "$nb" .ipynb)
             jupyter nbconvert "$nb" --to markdown --output "_posts/${base}" --output-dir .
-            sed -i '1s/^/---\nlayout: post\ntitle: "'"$base"'"\n---\n\n/' "_posts/${base}.md"
-          done
+            title=$(grep -m1 '^# Title:' "$out" | sed 's/^# Title: //')
+            title=${title:-${base//-/ }}
+            sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$out"          done
 
       - name: Commit and push changes
         run: |
