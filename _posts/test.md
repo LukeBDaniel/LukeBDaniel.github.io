@@ -13,9 +13,6 @@ This is a test!
 
 
 
-```python
-print("Goodbye World.")
-```
 
     Goodbye World.
 
