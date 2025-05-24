@@ -36,12 +36,12 @@ jobs:
             # Extract title from markdown
             title=$(grep -m1 '^# Title:' "$output_md" | sed 's/^# Title: //')
             title=${title:-${base//-/ }}
-            
-            # Remove title and date lines from markdown
+
+            # Remove title line from markdown
             sed -i '/^# Title:/d' "$output_md"
-            
-            # Add front matter
-            sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\ndate: $date\n---\n\n/" "$output_md"
+
+            # Add Jekyll front matter
+            sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$output_md"
           done
 
       - name: Filter untagged code blocks
