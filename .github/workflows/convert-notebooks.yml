@@ -26,29 +26,27 @@ jobs:
       - name: Convert notebooks to Markdown
         run: |
           mkdir -p _posts
+          mkdir -p assets/images
           for nb in notebooks/*.ipynb; do
             base=$(basename "$nb" .ipynb)
             output_md="_posts/$base.md"
-
-            # Convert notebook to markdown
-            jupyter nbconvert "$nb" --to markdown \
-              --output "$base" \
-              --output-dir _posts/ \
-              --FilesWriter.build_directory="_posts/" \
-              --ExtractOutputPreprocessor.output_filename_template="../assets/images/$base_files/{unique_key}_{cell_index}_{index}{extension}"
-
-            # Extract title from markdown
+          
+            # Convert to Markdown
+            jupyter nbconvert "$nb" --to markdown --output "$base" --output-dir _posts/
+          
+            # Move images from _posts to assets
+            if [ -d "_posts/${base}_files" ]; then
+              mv "_posts/${base}_files" "assets/images/${base}_files"
+            fi
+          
+            # Extract and clean title
             title=$(grep -m1 '^# Title:' "$output_md" | sed 's/^# Title: //')
             title=${title:-${base//-/ }}
-
-            # Remove title line from markdown
             sed -i '/^# Title:/d' "$output_md"
-
-            # Add Jekyll front matter
-            sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$output_md"
-
-            # Fix image paths in markdown
-            sed -i 's|!\[png\](\.\./assets/|![png](/assets/|g' "$output_md"
+            sed -i "1s|^|---\nlayout: post\ntitle: \"$title\"\n---\n\n|" "$output_md"
+          
+            # Rewrite image paths
+            sed -i "s|${base}_files/|/assets/images/${base}_files/|g" "$output_md"
           done
 
       - name: Filter untagged code blocks
