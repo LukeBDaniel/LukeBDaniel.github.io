@@ -3,9 +3,9 @@ layout: default
 title: Home
 ---
 
-# Welcome to My Jekyll Blog
+# Personal Projects
 
-Here are my latest posts:
+Latest projects:
 
 <ul>
   {% for post in site.posts %}
