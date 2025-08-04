@@ -31,7 +31,11 @@ jobs:
             output_md="_posts/$base.md"
 
             # Convert notebook to markdown
-            jupyter nbconvert "$nb" --to markdown --output "$base" --output-dir _posts/
+            jupyter nbconvert "$nb" --to markdown \
+              --output "$base" \
+              --output-dir _posts/ \
+              --FilesWriter.build_directory="_posts/" \
+              --ExtractOutputPreprocessor.output_filename_template="../assets/images/$base_files/{unique_key}_{cell_index}_{index}{extension}"
 
             # Extract title from markdown
             title=$(grep -m1 '^# Title:' "$output_md" | sed 's/^# Title: //')
@@ -42,6 +46,9 @@ jobs:
 
             # Add Jekyll front matter
             sed -i "1s/^/---\nlayout: post\ntitle: \"$title\"\n---\n\n/" "$output_md"
+
+            # Fix image paths in markdown
+            sed -i 's|!\[png\](\.\./assets/|![png](/assets/|g' "$output_md"
           done
 
       - name: Filter untagged code blocks
