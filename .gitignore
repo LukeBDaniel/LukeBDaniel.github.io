@@ -1,0 +1,8 @@
+# Ignore incomplete notebooks folder
+notebooks_incomplete/
+
+# Python cache
+__pycache__/
+
+# OS files
+.DS_Store
