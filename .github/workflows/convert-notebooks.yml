@@ -86,10 +86,18 @@ jobs:
             sed -i "1s|^|$frontmatter|" "$output_md"
             
             # Rewrite all image paths to use /assets/images/{base}/
+            # Escape special characters in base name for sed (hyphens don't need escaping)
+            base_escaped=$(echo "$base" | sed 's/[[\.*^$()+?{|]/\\&/g')
+            # Replace nbconvert-generated paths
+            # Handle: (base_files/image.png) -> (/assets/images/base/image.png)
+            # Handle: /assets/images/base_files/image.png -> /assets/images/base/image.png (if already partially replaced)
             sed -i \
-              -e "s|${base}_files/|/assets/images/$base/|g" \
+              -e "s|/assets/images/${base_escaped}_files/|/assets/images/$base/|g" \
+              -e "s|(${base_escaped}_files/|(/assets/images/$base/|g" \
+              -e "s|/${base_escaped}_files/|/assets/images/$base/|g" \
+              -e "s|${base_escaped}_files/|/assets/images/$base/|g" \
               -e "s|(images/|(/assets/images/$base/|g" \
-              -e "s|Image(filename='\.\./assets/images/$base/|Image(filename='/assets/images/$base/|g" \
+              -e "s|Image(filename='\.\./assets/images/$base_escaped/|Image(filename='/assets/images/$base/|g" \
               -e "s|Image(filename='\.\./assets/images/|Image(filename='/assets/images/|g" \
               -e "s|Image(filename=['\"]images/|Image(filename='/assets/images/$base/|g" \
               "$output_md"
