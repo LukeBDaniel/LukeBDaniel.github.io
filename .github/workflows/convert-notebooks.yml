@@ -20,33 +20,72 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install nbconvert and pygments
+      - name: Install dependencies
         run: pip install nbconvert jupyterlab-pygments
 
       - name: Convert notebooks to Markdown
         run: |
-          mkdir -p _posts
-          mkdir -p assets/images
-          for nb in notebooks/*.ipynb; do
+          mkdir -p _posts assets/images
+          
+          # Process each notebook
+          find notebooks -name "*.ipynb" -type f | while read nb; do
             base=$(basename "$nb" .ipynb)
+            nb_dir=$(dirname "$nb")
             output_md="_posts/$base.md"
-          
+            
+            echo "Processing: $nb"
+            
             # Convert to Markdown
-            jupyter nbconvert "$nb" --to markdown --output "$base" --output-dir _posts/
-          
-            # Move images from _posts to assets
-            if [ -d "_posts/${base}_files" ]; then
-              mv "_posts/${base}_files" "assets/images/${base}_files"
+            jupyter nbconvert "$nb" --to markdown --output "$base" --output-dir _posts/ 2>&1 | grep -v "Converting\|NbConvertApp" || true
+            
+            # Extract date from filename (format: YYYY-MM-DD or YYYY-M-D)
+            date_match=$(echo "$base" | grep -oE '[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}' | head -1)
+            if [ -n "$date_match" ]; then
+              # Normalize date to YYYY-MM-DD format (pad single digits)
+              IFS='-' read -r year month day <<< "$date_match"
+              date=$(printf "%04d-%02d-%02d" "$year" "$month" "$day")
+            else
+              date=$(date '+%Y-%m-%d')
             fi
-          
-            # Extract and clean title
-            title=$(grep -m1 '^# Title:' "$output_md" | sed 's/^# Title: //')
-            title=${title:-${base//-/ }}
+            
+            # Extract title from first markdown cell or use filename
+            title=$(grep -m1 '^# Title:' "$output_md" 2>/dev/null | sed 's/^# Title: //' || echo "")
+            if [ -z "$title" ]; then
+              title=$(echo "$base" | sed 's/-/ /g' | sed 's/[0-9]\{4\} [0-9]\{1,2\} [0-9]\{1,2\} //')
+            fi
+            
+            # Remove title line from content
             sed -i '/^# Title:/d' "$output_md"
-            sed -i "1s|^|---\nlayout: post\ntitle: \"$title\"\n---\n\n|" "$output_md"
-          
-            # Rewrite image paths
-            sed -i "s|${base}_files/|/assets/images/${base}_files/|g" "$output_md"
+            
+            # Setup images directory
+            mkdir -p "assets/images/$base"
+            
+            # Copy images from notebook's images/ directory (primary source)
+            if [ -d "$nb_dir/images" ]; then
+              cp -r "$nb_dir/images/"* "assets/images/$base/" 2>/dev/null || true
+              echo "  Copied images from $nb_dir/images/"
+            fi
+            
+            # Move any images from nbconvert output (_files directory)
+            if [ -d "_posts/${base}_files" ]; then
+              find "_posts/${base}_files" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" \) -exec mv {} "assets/images/$base/" \;
+              rmdir "_posts/${base}_files" 2>/dev/null || true
+            fi
+            
+            # Add Jekyll front matter
+            frontmatter="---\nlayout: post\ntitle: \"$title\"\ndate: $date\n---\n\n"
+            sed -i "1s|^|$frontmatter|" "$output_md"
+            
+            # Rewrite all image paths to use /assets/images/{base}/
+            sed -i \
+              -e "s|${base}_files/|/assets/images/$base/|g" \
+              -e "s|(images/|(/assets/images/$base/|g" \
+              -e "s|Image(filename='\.\./assets/images/$base/|Image(filename='/assets/images/$base/|g" \
+              -e "s|Image(filename='\.\./assets/images/|Image(filename='/assets/images/|g" \
+              -e "s|Image(filename=['\"]images/|Image(filename='/assets/images/$base/|g" \
+              "$output_md"
+            
+            echo "  Created: $output_md"
           done
 
       - name: Filter untagged code blocks
@@ -59,7 +98,6 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add _posts/
-          git add _posts/*_files/ || true
-          git commit -m "Convert notebooks to posts [auto]" || echo "No changes"
+          git add _posts/ assets/
+          git diff --staged --quiet || git commit -m "Auto-convert notebooks to posts [skip ci]"
           git push
