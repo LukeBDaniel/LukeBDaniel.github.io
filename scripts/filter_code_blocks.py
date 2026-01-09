@@ -45,8 +45,11 @@ def should_skip_line(line, prev_line_was_warning=False):
         return True, False
     
     # Skip file paths that are output (like /var/folders/... or http://)
+    # Skip standalone URLs/paths that are just output (not in sentences)
     if re.match(r'^\s*(/var/|/tmp/|http://|https://)', line_stripped):
-        return True, False
+        # Skip if it's a short standalone URL/path (likely output)
+        if len(line_stripped) < 200:
+            return True, False
     
     # Skip lines that are just file paths with line numbers
     if re.match(r'^\s*/.*\.py:\d+:', line_stripped):
