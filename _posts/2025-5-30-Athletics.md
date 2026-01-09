@@ -28,6 +28,7 @@ The Oakland Athletics' departure from the Bay Area has been attributed to low at
 
 
 
+
     
 ![png](/assets/images/2025-5-30-Athletics/2025-5-30-Athletics_8_0.png)
     
@@ -121,6 +122,11 @@ Even when accounting for league-wide trends, Oakland's attendance consistently r
 
 
 
+
+
+
+
+    
 ![png](/assets/images/2025-5-30-Athletics/2025-5-30-Athletics_18_0.png)
     
 
