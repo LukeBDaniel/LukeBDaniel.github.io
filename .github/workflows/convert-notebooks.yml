@@ -36,14 +36,23 @@ jobs:
             echo "Processing: $nb"
             
             # Convert to Markdown
-            jupyter nbconvert "$nb" --to markdown --output "$base" --output-dir _posts/ 2>&1 | grep -v "Converting\|NbConvertApp" || true
+            if ! jupyter nbconvert "$nb" --to markdown --output "$base" --output-dir _posts/ > /dev/null 2>&1; then
+              echo "  ERROR: Failed to convert $nb"
+              continue
+            fi
+            
+            # Check if output file was created
+            if [ ! -f "$output_md" ]; then
+              echo "  ERROR: Output file not created: $output_md"
+              continue
+            fi
             
             # Extract date from filename (format: YYYY-MM-DD or YYYY-M-D)
             date_match=$(echo "$base" | grep -oE '[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}' | head -1)
             if [ -n "$date_match" ]; then
               # Normalize date to YYYY-MM-DD format (pad single digits)
               IFS='-' read -r year month day <<< "$date_match"
-              date=$(printf "%04d-%02d-%02d" "$year" "$month" "$day")
+              date=$(printf "%04d-%02d-%02d" "$year" "$month" "$day" 2>/dev/null || echo "$date_match")
             else
               date=$(date '+%Y-%m-%d')
             fi
@@ -90,9 +99,13 @@ jobs:
 
       - name: Filter untagged code blocks
         run: |
-          for mdfile in _posts/*.md; do
-            python3 scripts/filter_code_blocks.py "$mdfile"
-          done
+          if ls _posts/*.md 1> /dev/null 2>&1; then
+            for mdfile in _posts/*.md; do
+              python3 scripts/filter_code_blocks.py "$mdfile"
+            done
+          else
+            echo "No markdown files to filter"
+          fi
 
       - name: Commit and push posts
         run: |
