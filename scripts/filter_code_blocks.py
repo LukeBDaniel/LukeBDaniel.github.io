@@ -64,8 +64,79 @@ with open(md_path) as f:
 
 i = 0
 in_warning_block = False
+in_traceback_block = False
 while i < len(lines):
     line = lines[i]
+    
+    # Check for Traceback/Error blocks
+    # Separator lines (----------) mark traceback blocks - skip everything between separators
+    if re.match(r'^\s*-{10,}', line.strip()):  # Separator line (----------)
+        if in_traceback_block:
+            # This separator ends the traceback block
+            in_traceback_block = False
+            i += 1  # Skip ending separator
+            continue
+        else:
+            # Check if next lines contain traceback content
+            # Look ahead a few lines to see if this is a traceback block
+            lookahead = min(5, len(lines) - i - 1)
+            is_traceback = False
+            for j in range(1, lookahead + 1):
+                if i + j < len(lines):
+                    next_line = lines[i + j]
+                    if re.search(r'(Traceback|Error|Exception|KeyboardInterrupt|KeyError|ValueError|File ~|Input In|--->)', next_line):
+                        is_traceback = True
+                        break
+                    # If we hit another separator or content, stop looking
+                    if re.match(r'^\s*-{10,}|^\s*!\[|^\s*#\s+[A-Z]', next_line.strip()):
+                        break
+            if is_traceback:
+                in_traceback_block = True
+                i += 1  # Skip separator
+                continue
+    
+    # Also check for traceback start without separator
+    if not in_traceback_block and re.search(r'\s+(KeyboardInterrupt|KeyError|ValueError|TypeError|AttributeError|IndexError)\s+Traceback', line):
+        in_traceback_block = True
+        i += 1
+        continue
+    
+    if in_traceback_block:
+        # Skip until we hit another separator (marks end of traceback)
+        if re.match(r'^\s*-{10,}', line.strip()):
+            in_traceback_block = False
+            i += 1
+            continue
+        # Skip ALL lines in traceback block - they're all error output
+        # This includes: File paths, line numbers, code snippets, error messages
+        # Only stop if we hit clear content markers (images, headings, code blocks)
+        if re.match(r'^\s*!\[|^\s*#\s+[A-Z]|^\s*```', line.strip()):
+            # Hit an image, heading, or code block - end traceback
+            in_traceback_block = False
+        elif re.match(r'^\s*[A-Z][a-z]+', line.strip()) and len(line.strip()) > 30 and not re.search(r'(File |Input |--->|Traceback)', line):
+            # Hit a substantial sentence that's not traceback - might be content
+            # But be conservative - if it has traceback markers, keep skipping
+            if not re.search(r'(File |Input |--->|\d+\s+\||Traceback)', line):
+                in_traceback_block = False
+            else:
+                i += 1
+                continue
+        else:
+            # Skip this line (it's part of the traceback)
+            i += 1
+            continue
+    
+    # Check for traceback start without separator
+    if re.search(r'\s+(KeyboardInterrupt|KeyError|ValueError|TypeError|AttributeError|IndexError)\s+Traceback', line):
+        in_traceback_block = True
+        i += 1
+        continue
+    
+    # Check for standalone error lines (like "KeyboardInterrupt:" or "KeyError: 'Tm'")
+    if re.match(r'^\s*(KeyboardInterrupt|KeyError|ValueError|TypeError|AttributeError|IndexError|NameError|ImportError):', line.strip()):
+        in_traceback_block = True
+        i += 1
+        continue
     
     # Check for HTML block start (div, style, table)
     # Handle nested HTML blocks by tracking depth
