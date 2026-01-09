@@ -23,6 +23,14 @@ jobs:
       - name: Install dependencies
         run: pip install nbconvert jupyterlab-pygments
 
+      - name: Auto-inject plot saving code
+        run: |
+          # Process each notebook to inject automatic savefig/Image calls
+          find notebooks -name "*.ipynb" -type f | while read nb; do
+            echo "Preprocessing: $nb"
+            python3 scripts/auto_save_plots.py "$nb" || true
+          done
+
       - name: Convert notebooks to Markdown
         run: |
           mkdir -p _posts assets/images
