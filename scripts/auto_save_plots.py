@@ -21,14 +21,25 @@ def detect_plot_commands(source_lines):
     source_text = '\n'.join(source_lines)
     
     # Skip cells that contain animation code (they handle saving themselves)
+    # Check for animation-specific patterns first, before checking for plot patterns
     animation_patterns = [
-        r'FuncAnimation',
-        r'anim\.save',
-        r'PillowWriter',
-        r'\.to_jshtml',
+        r'FuncAnimation',           # Matplotlib animation class
+        r'anim\s*=\s*FuncAnimation', # Animation assignment
+        r'anim\.save',              # Animation save method
+        r'PillowWriter',            # Animation writer
+        r'\.to_jshtml',             # HTML animation export
+        r'fig_anim',                # Common animation figure variable name
+        r'ax_anim',                 # Common animation axes variable name
+        r'\.save\s*\([^)]*writer\s*=', # Animation save with writer parameter
     ]
     
     if any(re.search(pattern, source_text, re.IGNORECASE) for pattern in animation_patterns):
+        return False
+    
+    # Skip cells that already have savefig/Image calls (already processed or intentionally excluded)
+    if re.search(r'plt\.savefig\s*\(', source_text, re.IGNORECASE):
+        return False
+    if re.search(r'Image\s*\(filename\s*=', source_text, re.IGNORECASE):
         return False
     
     # Patterns that indicate plot creation (excluding savefig/show to avoid false positives)
