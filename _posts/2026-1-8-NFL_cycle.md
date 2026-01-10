@@ -50,9 +50,7 @@ A single snapshot tells part of the story, but the real magic happens when we wa
 
 
 
-    
-![png](/assets/images/2026-1-8-NFL_cycle/2026-1-8-NFL_cycle_11_0.png)
-    
+        
 
 
 This project was inspired by The Athletic's "[NHL Contention Cycle](https://www.nytimes.com/athletic/6597949/2025/09/17/nhl-contention-cycle-player-tiers-2025-26/)."
