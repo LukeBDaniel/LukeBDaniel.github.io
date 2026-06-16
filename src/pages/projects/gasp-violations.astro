@@ -1,0 +1,61 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`GASP Violations Dashboard | ${SITE_TITLE}`} description="Data analytics capstone project visualizing air quality violations and fines in Allegheny County." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="project-header">
+				<h1>Visualizing Industrial Impact in Allegheny County</h1>
+				<p class="subtitle">A data analytics capstone project for GASP (Group Against Smog & Pollution) visualizing 5 years of air quality violations and fines from major industrial polluters.</p>
+			</div>
+
+			<div class="prose glass-card mt-4">
+				<h3>About this Project</h3>
+				<p>This project was developed in Spring 2025 as a Data Science Capstone collaboration with the Group Against Smog & Pollution (GASP). It analyzes air quality violations issued against steel and coke facilities in southwestern Pennsylvania between 2020 and 2024.</p>
+				<p>This dashboard was the result of a highly collaborative, team-based effort built alongside five other undergraduate students. The process involved regular communication and iterative feedback loops directly with our client, GASP, to ensure the final product perfectly aligned with their advocacy goals.</p>
+				<p>The dashboard provides an interactive look at the nature of these violations (such as exceedances of emission limits and operational failures) and visualizes the millions of dollars in fines levied against major polluters like U.S. Steel's Clairton Coke Works and Edgar Thomson Plant.</p>
+				
+				<a href="https://www.gasp-pgh.org/violations-data" target="_blank" rel="noopener noreferrer" class="btn-primary">View Live Dashboard on GASP</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.project-header {
+		margin-bottom: 1.5em;
+	}
+	.subtitle {
+		font-size: 1.25em;
+		color: var(--text-muted);
+	}
+	.mt-4 {
+		margin-top: 1.5em;
+	}
+	.btn-primary {
+		display: inline-block;
+		margin-top: 1.5em;
+		padding: 0.75em 1.5em;
+		background: transparent;
+		border: 1px solid var(--accent);
+		color: var(--accent) !important;
+		font-weight: 600;
+		border-radius: 8px;
+		text-decoration: none;
+		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+	.btn-primary:hover {
+		background-color: var(--accent);
+		color: #0f172a !important;
+	}
+</style>

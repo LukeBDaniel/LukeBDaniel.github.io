@@ -1,0 +1,81 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`AMC Guide | ${SITE_TITLE}`} description="A web tool for scraping and filtering AMC movie showtimes." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="project-header">
+				<h1>AMC Guide</h1>
+				<p class="subtitle">A web tool for scraping, filtering, and organizing AMC movie showtimes.</p>
+			</div>
+
+			<div class="iframe-container glass-card">
+				<iframe 
+					src="https://LukeBDaniel.github.io/AMC-Guide/" 
+					title="AMC Guide Application"
+					frameborder="0"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<div class="prose glass-card mt-4">
+				<h3>About this Project</h3>
+				<p>The AMC Guide is a custom-built web application designed to simplify the process of finding the perfect movie showtime. It features a backend scraper that collects up-to-date showtime data and a React-based frontend for an interactive browsing experience.</p>
+				<p>Users can filter showtimes across multiple theaters by movie title, format (e.g., IMAX, Dolby Cinema), language, and seating options. The interface includes a timeline view of showtimes and the ability to pin specific showings for easy comparison.</p>
+				<p>Built with React, Vite, and automated web scraping tools, this project demonstrates a complete pipeline from data collection to a dynamic, user-friendly frontend.</p>
+                <div style="margin-top: 1.5em;">
+                    <a href="https://github.com/LukeBDaniel/AMC-Guide" target="_blank" rel="noopener noreferrer" class="btn glass-card">View on GitHub</a>
+                </div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.project-header {
+		margin-bottom: 1.5em;
+	}
+	.iframe-container {
+		width: 100%;
+		height: 85vh;
+		min-height: 700px;
+		padding: 0;
+		overflow: hidden;
+		margin-bottom: 1.5em;
+	}
+	iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: transparent;
+	}
+	.subtitle {
+		font-size: 1.25em;
+		color: var(--text-muted);
+	}
+	.mt-4 {
+		margin-top: 1.5em;
+	}
+    .btn {
+        display: inline-block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        color: var(--accent);
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+    .btn:hover {
+        background-color: var(--bg-card);
+    }
+</style>
