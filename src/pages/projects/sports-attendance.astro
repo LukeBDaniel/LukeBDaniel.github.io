@@ -32,6 +32,10 @@ import { SITE_TITLE } from '../../consts';
 				<p>This tool predicts home game attendance for 8 NY-area professional sports teams using machine learning. It pulls game results and attendance from the ESPN API, Baseball Reference, and American Soccer Analysis, matching historical weather to each venue via Open-Meteo.</p>
 				<p>The core model is a Gradient Boosting Regressor trained on normalized fill rates, with COVID-era seasons excluded. It features leave-one-out feature contributions to explain which factors drive each prediction above or below the historical average.</p>
 				<p>I built this entire project—from the data pipelines and machine learning model to the interactive Streamlit deployment—in just a few hours by effectively leveraging Claude Code.</p>
+                <div style="margin-top: 1.5em; display: flex; gap: 1em; flex-wrap: wrap;">
+                    <a href="https://lbd-sports-attendance.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn glass-card">Open Full Page</a>
+                    <a href="https://github.com/LukeBDaniel/sports-attendance" target="_blank" rel="noopener noreferrer" class="btn glass-card">View on GitHub</a>
+                </div>
 			</div>
 		</main>
 		<Footer />
@@ -62,5 +66,17 @@ import { SITE_TITLE } from '../../consts';
 	}
 	.mt-4 {
 		margin-top: 1.5em;
+	}
+	.btn {
+		display: inline-block;
+		padding: 0.5em 1em;
+		text-decoration: none;
+		color: var(--accent);
+		border: 1px solid var(--border-color);
+		border-radius: 4px;
+		transition: background-color 0.2s ease;
+	}
+	.btn:hover {
+		background-color: var(--bg-card);
 	}
 </style>
