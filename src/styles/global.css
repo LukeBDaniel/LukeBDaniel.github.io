@@ -103,12 +103,20 @@ a.glass-card:hover {
 	color: var(--accent);
 	border: 1px solid var(--border-color);
 }
+.prose pre code {
+	background: transparent;
+	padding: 0;
+	border: none;
+	color: inherit;
+}
 .prose pre {
 	background: #0b1120;
 	border: 1px solid var(--border-color);
 	padding: 1.5em;
 	border-radius: 8px;
 	overflow-x: auto;
+	font-size: 0.85em;
+	color: var(--text-main);
 }
 .prose blockquote {
 	border-left: 4px solid var(--border-color);

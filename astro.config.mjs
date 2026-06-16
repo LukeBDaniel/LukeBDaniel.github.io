@@ -6,4 +6,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://LukeBDaniel.github.io',
 	integrations: [mdx()],
+	markdown: {
+		syntaxHighlight: false,
+	},
 });

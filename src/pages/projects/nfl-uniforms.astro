@@ -1,0 +1,82 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`NFL Uniform Mixer | ${SITE_TITLE}`} description="An interactive static web application for visualizing and customizing matchups between NFL teams." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="project-header">
+				<h1>NFL Uniform Mixer</h1>
+				<p class="subtitle">An interactive web application to visualize and customize NFL team uniform matchups.</p>
+			</div>
+
+			<div class="iframe-container glass-card">
+				<iframe 
+					src="https://LukeBDaniel.github.io/NFL-Uniforms/" 
+					title="NFL Uniforms Application"
+					frameborder="0"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<div class="prose glass-card mt-4">
+				<h3>About this Project</h3>
+				<p>The NFL Uniforms Matchup Viewer is an interactive, responsive static web application that allows users to visualize and customize matchups between NFL teams. Users can select Home and Away teams, mix and match different uniform elements (helmets, jerseys, pants, and socks), and export high-resolution images of their custom matchups.</p>
+				<p>It features a sleek dark-mode UI with a studio-lit white stage that perfectly frames the mannequins, and a built-in "Save Image" feature that uses mathematically perfect cropping and scaling to generate a standardized 1920x1080 high-res PNG image.</p>
+				<p>Built with vanilla JavaScript, HTML5, and CSS3, this project runs completely client-side in the browser.</p>
+                <div style="margin-top: 1.5em; display: flex; gap: 1em; flex-wrap: wrap;">
+                    <a href="https://LukeBDaniel.github.io/NFL-Uniforms/" target="_blank" rel="noopener noreferrer" class="btn glass-card">Open Full Page</a>
+                    <a href="https://github.com/LukeBDaniel/NFL-Uniforms" target="_blank" rel="noopener noreferrer" class="btn glass-card">View on GitHub</a>
+                </div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.project-header {
+		margin-bottom: 1.5em;
+	}
+	.iframe-container {
+		width: 100%;
+		height: 85vh;
+		min-height: 700px;
+		padding: 0;
+		overflow: hidden;
+		margin-bottom: 1.5em;
+	}
+	iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: transparent;
+	}
+	.subtitle {
+		font-size: 1.25em;
+		color: var(--text-muted);
+	}
+	.mt-4 {
+		margin-top: 1.5em;
+	}
+    .btn {
+        display: inline-block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        color: var(--accent);
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+    .btn:hover {
+        background-color: var(--bg-card);
+    }
+</style>
