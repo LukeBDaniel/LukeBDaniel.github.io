@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "version": "nfl4th 1.0.7",
+  "models": {
+    "conversion": {
+      "file": "conversion-6cc69768cfba.bin",
+      "sha256": "6cc69768cfbaecac162d8db80bf723a5a7b96428e9af6c33478e2c76b653661c",
+      "bytes": 10593520,
+      "classes": 76,
+      "features": 11,
+      "objective": "multi:softprob",
+      "base": 0.5,
+      "trees": 85424,
+      "nodes": 495506
+    },
+    "home_wp": {
+      "file": "home_wp-716b3372cf01.bin",
+      "sha256": "716b3372cf01588d2245ed56b16eda46cd5ceeb83ed527060e7260b8e7ccdcae",
+      "bytes": 3076548,
+      "classes": 1,
+      "features": 11,
+      "objective": "binary:logistic",
+      "base": 0.5,
+      "trees": 3775,
+      "nodes": 152317
+    },
+    "ep": {
+      "file": "ep-30cd03460a1f.bin",
+      "sha256": "30cd03460a1f11867099b3e42c968ed700edd4d773c40b10add35927a50789af",
+      "bytes": 4336148,
+      "classes": 7,
+      "features": 18,
+      "objective": "multi:softprob",
+      "base": 0.5,
+      "trees": 3675,
+      "nodes": 215337
+    },
+    "spread_wp": {
+      "file": "spread_wp-32678f4604ef.bin",
+      "sha256": "32678f4604efa21738ad721ce2cceac3e3b337dd4ffcfe050dbbcb0fbf7a490f",
+      "bytes": 515120,
+      "classes": 1,
+      "features": 12,
+      "objective": "binary:logistic",
+      "base": 0.5,
+      "trees": 534,
+      "nodes": 25542
+    },
+    "two_point": {
+      "file": "two_point-6f7741b1f691.bin",
+      "sha256": "6f7741b1f691ce803de20ba86e944db5cc23cd6eebc7146e4e04314053f10608",
+      "bytes": 6476,
+      "classes": 1,
+      "features": 9,
+      "objective": "binary:logistic",
+      "base": 0.5,
+      "trees": 21,
+      "nodes": 315
+    }
+  }
+}
