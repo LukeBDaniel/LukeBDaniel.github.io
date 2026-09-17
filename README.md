@@ -11,7 +11,9 @@ This website is built to serve as a central hub for my projects, resume, and sho
 The project page at `/projects/fourth-down-calc/` embeds the static calculator
 at `/fourth-down-calc/`. Its published bundle is checked into
 `public/fourth-down-calc/`, so the existing GitHub Pages deployment is self-contained.
-Model attribution is included with the bundle. The calculator is still in development.
+The bundle includes model attribution, game schedules, team/kicker ratings, and
+the historical fourth-down archive. The game browser loads these as static JSON,
+so no server API is needed. The calculator is still in development.
 
 To refresh it from the sibling `fourth-down-calc` checkout (with its dependencies
 installed and Node 22.13+):

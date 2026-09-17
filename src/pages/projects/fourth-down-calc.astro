@@ -8,14 +8,14 @@ import { SITE_TITLE } from '../../consts';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Fourth Down Calculator | ${SITE_TITLE}`} description="An NFL fourth-down calculator comparing going for it, kicking a field goal, and punting by expected win probability." />
+		<BaseHead title={`Fourth Down Calculator | ${SITE_TITLE}`} description="Explore real NFL fourth-down situations with a custom matchup-aware calculator built on nfl4th models." />
 	</head>
 	<body>
 		<Header />
 		<main>
 			<div class="project-header">
 				<h1>Fourth Down Calculator</h1>
-				<p class="subtitle">Compare going for it, kicking a field goal, and punting by expected win probability.</p>
+				<p class="subtitle">Explore real NFL fourth-down decisions with matchup-aware win probability estimates.</p>
 			</div>
 
 			<div class="iframe-container glass-card">
@@ -29,9 +29,10 @@ import { SITE_TITLE } from '../../consts';
 
 			<div class="prose glass-card mt-4">
 				<h3>About this Project</h3>
-				<p>Fourth Down Calculator explores one of football’s recurring decisions: go for it, kick a field goal, or punt. Set the field position, yards to go, score, game clock, and timeouts to compare the options by expected win probability.</p>
-				<p>Built with React and TypeScript, the calculator runs the published nfl4th models directly in the browser using a Web Worker. Advanced controls let users adjust assumptions such as the point spread, expected total points, and home-field advantage.</p>
-				<p>This is an ongoing personal project. The current version is ready to explore, and I’m continuing to refine it. Its estimates reflect the underlying models and their assumptions.</p>
+				<p>Fourth Down Calculator compares going for it, kicking a field goal, and punting by expected win probability. Users can build a hypothetical situation or select an NFL game and load a real fourth-down play, then compare the model’s recommendation with the team’s actual decision and the play’s outcome.</p>
+				<p>I extended the published nfl4th models with a custom adjustment layer that accounts for the matchup: offensive conversion ability, defensive resistance, kicker accuracy by distance, temperature, wind, drive-level performance, and kickoff return and coverage tendencies. A matchup panel shows the context behind the estimates alongside the game’s spread, total, and stadium conditions.</p>
+				<p>The React and TypeScript frontend runs calculations in a browser Web Worker. A Python data pipeline processes nflverse play-by-play into team and kicker ratings and a browsable archive of real game situations. The current archive covers games from the 2024–2026 seasons.</p>
+				<p>This is an ongoing personal project. I’m continuing to refine the model and its evaluation; historical plays are explored using the current ratings, rather than ratings reconstructed as of each game.</p>
                 <div style="margin-top: 1.5em; display: flex; gap: 1em; flex-wrap: wrap;">
                     <a href="https://LukeBDaniel.github.io/fourth-down-calc/" target="_blank" rel="noopener noreferrer" class="btn glass-card">Open Full Page</a>
                 </div>

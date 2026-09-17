@@ -14,13 +14,13 @@ execFileSync('npm', ['run', 'build'], {
   env: { ...process.env, BASE_PATH: '', STATIC_ASSET_PREFIX: '/fourth-down-calc' },
   stdio: 'inherit',
 });
-for (const name of ['index.html', 'models/manifest.json', 'fourth-down-calc/_next']) {
+for (const name of ['index.html', 'models/manifest.json', 'data/games.json', 'data/fourth_downs_by_game.json', 'data/team_ratings.json', 'data/kicker_ratings.json', 'fourth-down-calc/_next']) {
   if (!existsSync(resolve(output, name))) throw new Error(`Missing calculator export: ${name}`);
 }
 rmSync(staging, { recursive: true, force: true });
 mkdirSync(staging, { recursive: true });
 cpSync(resolve(output, 'fourth-down-calc'), staging, { recursive: true });
-for (const name of ['index.html', 'models', 'favicon.svg']) {
+for (const name of ['index.html', 'models', 'data', 'favicon.svg']) {
   cpSync(resolve(output, name), resolve(staging, name), { recursive: true });
 }
 cpSync(resolve(source, 'THIRD_PARTY_NOTICES.md'), resolve(staging, 'THIRD_PARTY_NOTICES.md'));

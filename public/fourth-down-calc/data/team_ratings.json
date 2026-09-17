@@ -1,0 +1,1574 @@
+{
+  "ARI": {
+    "team": "ARI",
+    "short": {
+      "off_delta": 0.0098,
+      "def_delta": -0.037,
+      "off_conv_rate": 0.656,
+      "opp_conv_rate": 0.72,
+      "def_stop_rate": 0.28,
+      "attempts": 217,
+      "opp_attempts": 248
+    },
+    "medium": {
+      "off_delta": 0.0399,
+      "def_delta": -0.0034,
+      "off_conv_rate": 0.523,
+      "opp_conv_rate": 0.466,
+      "def_stop_rate": 0.534,
+      "attempts": 339,
+      "opp_attempts": 293
+    },
+    "long": {
+      "off_delta": -0.0093,
+      "def_delta": 0.0176,
+      "off_conv_rate": 0.24,
+      "opp_conv_rate": 0.221,
+      "def_stop_rate": 0.779,
+      "attempts": 448,
+      "opp_attempts": 363
+    },
+    "overall": {
+      "off_delta": 0.0046,
+      "def_delta": -0.015,
+      "off_conv_rate": 0.421,
+      "opp_conv_rate": 0.435,
+      "def_stop_rate": 0.565,
+      "attempts": 1004,
+      "opp_attempts": 904
+    },
+    "off_delta": 0.0098,
+    "def_delta": -0.037,
+    "off_conv_rate": 0.656,
+    "attempts": 217,
+    "off_drive_epa": -0.0188,
+    "def_drive_epa": 0.1991,
+    "ko_return_delta": -0.765,
+    "ko_coverage_delta": -0.875,
+    "ko_return_avg": 29.79,
+    "ko_coverage_avg": 31.64
+  },
+  "ATL": {
+    "team": "ATL",
+    "short": {
+      "off_delta": -0.042,
+      "def_delta": -0.0171,
+      "off_conv_rate": 0.553,
+      "opp_conv_rate": 0.674,
+      "def_stop_rate": 0.326,
+      "attempts": 221,
+      "opp_attempts": 252
+    },
+    "medium": {
+      "off_delta": -0.0578,
+      "def_delta": 0.0315,
+      "off_conv_rate": 0.362,
+      "opp_conv_rate": 0.401,
+      "def_stop_rate": 0.599,
+      "attempts": 310,
+      "opp_attempts": 315
+    },
+    "long": {
+      "off_delta": -0.026,
+      "def_delta": 0.0121,
+      "off_conv_rate": 0.214,
+      "opp_conv_rate": 0.232,
+      "def_stop_rate": 0.768,
+      "attempts": 407,
+      "opp_attempts": 414
+    },
+    "overall": {
+      "off_delta": -0.0618,
+      "def_delta": 0.01,
+      "off_conv_rate": 0.34,
+      "opp_conv_rate": 0.402,
+      "def_stop_rate": 0.598,
+      "attempts": 938,
+      "opp_attempts": 981
+    },
+    "off_delta": -0.042,
+    "def_delta": -0.0171,
+    "off_conv_rate": 0.553,
+    "attempts": 221,
+    "off_drive_epa": -0.2598,
+    "def_drive_epa": -0.1602,
+    "ko_return_delta": 0.132,
+    "ko_coverage_delta": -1.035,
+    "ko_return_avg": 29.69,
+    "ko_coverage_avg": 31.16
+  },
+  "BAL": {
+    "team": "BAL",
+    "short": {
+      "off_delta": 0.0345,
+      "def_delta": 0.0657,
+      "off_conv_rate": 0.704,
+      "opp_conv_rate": 0.496,
+      "def_stop_rate": 0.504,
+      "attempts": 255,
+      "opp_attempts": 265
+    },
+    "medium": {
+      "off_delta": 0.0107,
+      "def_delta": 0.0275,
+      "off_conv_rate": 0.477,
+      "opp_conv_rate": 0.407,
+      "def_stop_rate": 0.593,
+      "attempts": 307,
+      "opp_attempts": 388
+    },
+    "long": {
+      "off_delta": 0.0083,
+      "def_delta": -0.0271,
+      "off_conv_rate": 0.266,
+      "opp_conv_rate": 0.299,
+      "def_stop_rate": 0.701,
+      "attempts": 398,
+      "opp_attempts": 461
+    },
+    "overall": {
+      "off_delta": 0.0238,
+      "def_delta": 0.0227,
+      "off_conv_rate": 0.444,
+      "opp_conv_rate": 0.386,
+      "def_stop_rate": 0.614,
+      "attempts": 960,
+      "opp_attempts": 1114
+    },
+    "off_delta": 0.0345,
+    "def_delta": 0.0657,
+    "off_conv_rate": 0.704,
+    "attempts": 255,
+    "off_drive_epa": 0.3941,
+    "def_drive_epa": -0.0557,
+    "ko_return_delta": 0.291,
+    "ko_coverage_delta": -0.508,
+    "ko_return_avg": 30.71,
+    "ko_coverage_avg": 30.85
+  },
+  "BUF": {
+    "team": "BUF",
+    "short": {
+      "off_delta": 0.0359,
+      "def_delta": -0.0286,
+      "off_conv_rate": 0.693,
+      "opp_conv_rate": 0.692,
+      "def_stop_rate": 0.308,
+      "attempts": 322,
+      "opp_attempts": 247
+    },
+    "medium": {
+      "off_delta": 0.033,
+      "def_delta": -0.0128,
+      "off_conv_rate": 0.51,
+      "opp_conv_rate": 0.485,
+      "def_stop_rate": 0.515,
+      "attempts": 303,
+      "opp_attempts": 295
+    },
+    "long": {
+      "off_delta": 0.0399,
+      "def_delta": -0.0253,
+      "off_conv_rate": 0.312,
+      "opp_conv_rate": 0.293,
+      "def_stop_rate": 0.707,
+      "attempts": 419,
+      "opp_attempts": 507
+    },
+    "overall": {
+      "off_delta": 0.0652,
+      "def_delta": -0.0306,
+      "off_conv_rate": 0.492,
+      "opp_conv_rate": 0.454,
+      "def_stop_rate": 0.546,
+      "attempts": 1044,
+      "opp_attempts": 1049
+    },
+    "off_delta": 0.0359,
+    "def_delta": -0.0286,
+    "off_conv_rate": 0.693,
+    "attempts": 322,
+    "off_drive_epa": 0.5963,
+    "def_drive_epa": 0.0632,
+    "ko_return_delta": -0.058,
+    "ko_coverage_delta": 0.173,
+    "ko_return_avg": 30.77,
+    "ko_coverage_avg": 30.58
+  },
+  "CAR": {
+    "team": "CAR",
+    "short": {
+      "off_delta": -0.0316,
+      "def_delta": -0.0411,
+      "off_conv_rate": 0.573,
+      "opp_conv_rate": 0.73,
+      "def_stop_rate": 0.27,
+      "attempts": 236,
+      "opp_attempts": 228
+    },
+    "medium": {
+      "off_delta": 0.0035,
+      "def_delta": -0.0458,
+      "off_conv_rate": 0.464,
+      "opp_conv_rate": 0.542,
+      "def_stop_rate": 0.458,
+      "attempts": 343,
+      "opp_attempts": 330
+    },
+    "long": {
+      "off_delta": -0.0043,
+      "def_delta": -0.0583,
+      "off_conv_rate": 0.247,
+      "opp_conv_rate": 0.357,
+      "def_stop_rate": 0.643,
+      "attempts": 449,
+      "opp_attempts": 404
+    },
+    "overall": {
+      "off_delta": -0.011,
+      "def_delta": -0.0759,
+      "off_conv_rate": 0.402,
+      "opp_conv_rate": 0.514,
+      "def_stop_rate": 0.486,
+      "attempts": 1028,
+      "opp_attempts": 962
+    },
+    "off_delta": -0.0316,
+    "def_delta": -0.0411,
+    "off_conv_rate": 0.573,
+    "attempts": 236,
+    "off_drive_epa": -0.0318,
+    "def_drive_epa": 0.4909,
+    "ko_return_delta": -0.148,
+    "ko_coverage_delta": 0.428,
+    "ko_return_avg": 29.65,
+    "ko_coverage_avg": 29.5
+  },
+  "CHI": {
+    "team": "CHI",
+    "short": {
+      "off_delta": 0.0225,
+      "def_delta": 0.0091,
+      "off_conv_rate": 0.671,
+      "opp_conv_rate": 0.617,
+      "def_stop_rate": 0.383,
+      "attempts": 237,
+      "opp_attempts": 223
+    },
+    "medium": {
+      "off_delta": 0.0178,
+      "def_delta": -0.0258,
+      "off_conv_rate": 0.484,
+      "opp_conv_rate": 0.51,
+      "def_stop_rate": 0.49,
+      "attempts": 388,
+      "opp_attempts": 317
+    },
+    "long": {
+      "off_delta": 0.0305,
+      "def_delta": 0.0002,
+      "off_conv_rate": 0.297,
+      "opp_conv_rate": 0.253,
+      "def_stop_rate": 0.747,
+      "attempts": 467,
+      "opp_attempts": 410
+    },
+    "overall": {
+      "off_delta": 0.0453,
+      "def_delta": -0.0111,
+      "off_conv_rate": 0.467,
+      "opp_conv_rate": 0.429,
+      "def_stop_rate": 0.571,
+      "attempts": 1092,
+      "opp_attempts": 950
+    },
+    "off_delta": 0.0225,
+    "def_delta": 0.0091,
+    "off_conv_rate": 0.671,
+    "attempts": 237,
+    "off_drive_epa": 0.4524,
+    "def_drive_epa": 0.134,
+    "ko_return_delta": -0.105,
+    "ko_coverage_delta": 0.582,
+    "ko_return_avg": 30.87,
+    "ko_coverage_avg": 29.87
+  },
+  "CIN": {
+    "team": "CIN",
+    "short": {
+      "off_delta": 0.0303,
+      "def_delta": 0.0104,
+      "off_conv_rate": 0.688,
+      "opp_conv_rate": 0.61,
+      "def_stop_rate": 0.39,
+      "attempts": 247,
+      "opp_attempts": 242
+    },
+    "medium": {
+      "off_delta": -0.0039,
+      "def_delta": -0.049,
+      "off_conv_rate": 0.453,
+      "opp_conv_rate": 0.555,
+      "def_stop_rate": 0.445,
+      "attempts": 313,
+      "opp_attempts": 328
+    },
+    "long": {
+      "off_delta": 0.0766,
+      "def_delta": -0.0013,
+      "off_conv_rate": 0.372,
+      "opp_conv_rate": 0.256,
+      "def_stop_rate": 0.744,
+      "attempts": 412,
+      "opp_attempts": 408
+    },
+    "overall": {
+      "off_delta": 0.0627,
+      "def_delta": -0.0264,
+      "off_conv_rate": 0.491,
+      "opp_conv_rate": 0.451,
+      "def_stop_rate": 0.549,
+      "attempts": 972,
+      "opp_attempts": 978
+    },
+    "off_delta": 0.0303,
+    "def_delta": 0.0104,
+    "off_conv_rate": 0.688,
+    "attempts": 247,
+    "off_drive_epa": 0.1652,
+    "def_drive_epa": 0.1741,
+    "ko_return_delta": -0.408,
+    "ko_coverage_delta": -0.282,
+    "ko_return_avg": 30.03,
+    "ko_coverage_avg": 30.78
+  },
+  "CLE": {
+    "team": "CLE",
+    "short": {
+      "off_delta": 0.003,
+      "def_delta": -0.0113,
+      "off_conv_rate": 0.642,
+      "opp_conv_rate": 0.661,
+      "def_stop_rate": 0.339,
+      "attempts": 237,
+      "opp_attempts": 221
+    },
+    "medium": {
+      "off_delta": -0.0506,
+      "def_delta": 0.0285,
+      "off_conv_rate": 0.374,
+      "opp_conv_rate": 0.398,
+      "def_stop_rate": 0.602,
+      "attempts": 348,
+      "opp_attempts": 272
+    },
+    "long": {
+      "off_delta": -0.0501,
+      "def_delta": 0.0267,
+      "off_conv_rate": 0.183,
+      "opp_conv_rate": 0.207,
+      "def_stop_rate": 0.793,
+      "attempts": 542,
+      "opp_attempts": 476
+    },
+    "overall": {
+      "off_delta": -0.0731,
+      "def_delta": 0.025,
+      "off_conv_rate": 0.327,
+      "opp_conv_rate": 0.382,
+      "def_stop_rate": 0.618,
+      "attempts": 1127,
+      "opp_attempts": 969
+    },
+    "off_delta": 0.003,
+    "def_delta": -0.0113,
+    "off_conv_rate": 0.642,
+    "attempts": 237,
+    "off_drive_epa": -0.6647,
+    "def_drive_epa": -0.0834,
+    "ko_return_delta": 0.089,
+    "ko_coverage_delta": -0.598,
+    "ko_return_avg": 29.51,
+    "ko_coverage_avg": 30.55
+  },
+  "DAL": {
+    "team": "DAL",
+    "short": {
+      "off_delta": 0.0159,
+      "def_delta": -0.0142,
+      "off_conv_rate": 0.666,
+      "opp_conv_rate": 0.677,
+      "def_stop_rate": 0.323,
+      "attempts": 265,
+      "opp_attempts": 242
+    },
+    "medium": {
+      "off_delta": 0.0281,
+      "def_delta": -0.0401,
+      "off_conv_rate": 0.507,
+      "opp_conv_rate": 0.549,
+      "def_stop_rate": 0.451,
+      "attempts": 356,
+      "opp_attempts": 336
+    },
+    "long": {
+      "off_delta": -0.0121,
+      "def_delta": -0.0262,
+      "off_conv_rate": 0.234,
+      "opp_conv_rate": 0.304,
+      "def_stop_rate": 0.696,
+      "attempts": 420,
+      "opp_attempts": 416
+    },
+    "overall": {
+      "off_delta": 0.0193,
+      "def_delta": -0.0382,
+      "off_conv_rate": 0.439,
+      "opp_conv_rate": 0.469,
+      "def_stop_rate": 0.531,
+      "attempts": 1041,
+      "opp_attempts": 994
+    },
+    "off_delta": 0.0159,
+    "def_delta": -0.0142,
+    "off_conv_rate": 0.666,
+    "attempts": 265,
+    "off_drive_epa": 0.2586,
+    "def_drive_epa": 0.4402,
+    "ko_return_delta": -0.288,
+    "ko_coverage_delta": -0.22,
+    "ko_return_avg": 29.85,
+    "ko_coverage_avg": 30.46
+  },
+  "DEN": {
+    "team": "DEN",
+    "short": {
+      "off_delta": 0.0174,
+      "def_delta": -0.0187,
+      "off_conv_rate": 0.667,
+      "opp_conv_rate": 0.68,
+      "def_stop_rate": 0.32,
+      "attempts": 260,
+      "opp_attempts": 240
+    },
+    "medium": {
+      "off_delta": -0.0037,
+      "def_delta": -0.0036,
+      "off_conv_rate": 0.453,
+      "opp_conv_rate": 0.466,
+      "def_stop_rate": 0.534,
+      "attempts": 311,
+      "opp_attempts": 303
+    },
+    "long": {
+      "off_delta": 0.015,
+      "def_delta": -0.0018,
+      "off_conv_rate": 0.275,
+      "opp_conv_rate": 0.256,
+      "def_stop_rate": 0.744,
+      "attempts": 466,
+      "opp_attempts": 499
+    },
+    "overall": {
+      "off_delta": 0.0143,
+      "def_delta": 0.0066,
+      "off_conv_rate": 0.432,
+      "opp_conv_rate": 0.407,
+      "def_stop_rate": 0.593,
+      "attempts": 1037,
+      "opp_attempts": 1042
+    },
+    "off_delta": 0.0174,
+    "def_delta": -0.0187,
+    "off_conv_rate": 0.667,
+    "attempts": 260,
+    "off_drive_epa": 0.0362,
+    "def_drive_epa": -0.2356,
+    "ko_return_delta": -0.378,
+    "ko_coverage_delta": -0.13,
+    "ko_return_avg": 30.18,
+    "ko_coverage_avg": 30.75
+  },
+  "DET": {
+    "team": "DET",
+    "short": {
+      "off_delta": -0.0305,
+      "def_delta": -0.0182,
+      "off_conv_rate": 0.578,
+      "opp_conv_rate": 0.68,
+      "def_stop_rate": 0.32,
+      "attempts": 263,
+      "opp_attempts": 220
+    },
+    "medium": {
+      "off_delta": 0.0208,
+      "def_delta": -0.0025,
+      "off_conv_rate": 0.492,
+      "opp_conv_rate": 0.464,
+      "def_stop_rate": 0.536,
+      "attempts": 368,
+      "opp_attempts": 327
+    },
+    "long": {
+      "off_delta": 0.0185,
+      "def_delta": -0.0131,
+      "off_conv_rate": 0.281,
+      "opp_conv_rate": 0.275,
+      "def_stop_rate": 0.725,
+      "attempts": 420,
+      "opp_attempts": 438
+    },
+    "overall": {
+      "off_delta": 0.0072,
+      "def_delta": -0.0096,
+      "off_conv_rate": 0.424,
+      "opp_conv_rate": 0.427,
+      "def_stop_rate": 0.573,
+      "attempts": 1051,
+      "opp_attempts": 985
+    },
+    "off_delta": -0.0305,
+    "def_delta": -0.0182,
+    "off_conv_rate": 0.578,
+    "attempts": 263,
+    "off_drive_epa": 0.2303,
+    "def_drive_epa": -0.0255,
+    "ko_return_delta": 0.682,
+    "ko_coverage_delta": 0.281,
+    "ko_return_avg": 31.83,
+    "ko_coverage_avg": 30.22
+  },
+  "GB": {
+    "team": "GB",
+    "short": {
+      "off_delta": -0.0273,
+      "def_delta": -0.029,
+      "off_conv_rate": 0.59,
+      "opp_conv_rate": 0.698,
+      "def_stop_rate": 0.302,
+      "attempts": 283,
+      "opp_attempts": 260
+    },
+    "medium": {
+      "off_delta": 0.0365,
+      "def_delta": -0.0304,
+      "off_conv_rate": 0.523,
+      "opp_conv_rate": 0.511,
+      "def_stop_rate": 0.489,
+      "attempts": 308,
+      "opp_attempts": 355
+    },
+    "long": {
+      "off_delta": 0.0265,
+      "def_delta": 0.0064,
+      "off_conv_rate": 0.292,
+      "opp_conv_rate": 0.242,
+      "def_stop_rate": 0.758,
+      "attempts": 394,
+      "opp_attempts": 423
+    },
+    "overall": {
+      "off_delta": 0.0219,
+      "def_delta": -0.0317,
+      "off_conv_rate": 0.441,
+      "opp_conv_rate": 0.455,
+      "def_stop_rate": 0.545,
+      "attempts": 985,
+      "opp_attempts": 1038
+    },
+    "off_delta": -0.0273,
+    "def_delta": -0.029,
+    "off_conv_rate": 0.59,
+    "attempts": 283,
+    "off_drive_epa": 0.2152,
+    "def_drive_epa": 0.1661,
+    "ko_return_delta": 0.027,
+    "ko_coverage_delta": -0.472,
+    "ko_return_avg": 30.15,
+    "ko_coverage_avg": 29.85
+  },
+  "HOU": {
+    "team": "HOU",
+    "short": {
+      "off_delta": 0.0092,
+      "def_delta": 0.0319,
+      "off_conv_rate": 0.651,
+      "opp_conv_rate": 0.554,
+      "def_stop_rate": 0.446,
+      "attempts": 247,
+      "opp_attempts": 229
+    },
+    "medium": {
+      "off_delta": 0.0264,
+      "def_delta": 0.0207,
+      "off_conv_rate": 0.5,
+      "opp_conv_rate": 0.42,
+      "def_stop_rate": 0.58,
+      "attempts": 330,
+      "opp_attempts": 330
+    },
+    "long": {
+      "off_delta": -0.0059,
+      "def_delta": -0.0003,
+      "off_conv_rate": 0.245,
+      "opp_conv_rate": 0.254,
+      "def_stop_rate": 0.746,
+      "attempts": 524,
+      "opp_attempts": 520
+    },
+    "overall": {
+      "off_delta": 0.01,
+      "def_delta": 0.0464,
+      "off_conv_rate": 0.427,
+      "opp_conv_rate": 0.356,
+      "def_stop_rate": 0.644,
+      "attempts": 1101,
+      "opp_attempts": 1079
+    },
+    "off_delta": 0.0092,
+    "def_delta": 0.0319,
+    "off_conv_rate": 0.651,
+    "attempts": 247,
+    "off_drive_epa": -0.0366,
+    "def_drive_epa": -0.3798,
+    "ko_return_delta": -0.546,
+    "ko_coverage_delta": 0.469,
+    "ko_return_avg": 30.01,
+    "ko_coverage_avg": 29.65
+  },
+  "IND": {
+    "team": "IND",
+    "short": {
+      "off_delta": -0.0105,
+      "def_delta": -0.0277,
+      "off_conv_rate": 0.614,
+      "opp_conv_rate": 0.707,
+      "def_stop_rate": 0.293,
+      "attempts": 254,
+      "opp_attempts": 268
+    },
+    "medium": {
+      "off_delta": 0.0073,
+      "def_delta": -0.02,
+      "off_conv_rate": 0.472,
+      "opp_conv_rate": 0.5,
+      "def_stop_rate": 0.5,
+      "attempts": 329,
+      "opp_attempts": 321
+    },
+    "long": {
+      "off_delta": 0.0213,
+      "def_delta": -0.0022,
+      "off_conv_rate": 0.286,
+      "opp_conv_rate": 0.257,
+      "def_stop_rate": 0.743,
+      "attempts": 411,
+      "opp_attempts": 427
+    },
+    "overall": {
+      "off_delta": 0.0054,
+      "def_delta": -0.0113,
+      "off_conv_rate": 0.422,
+      "opp_conv_rate": 0.43,
+      "def_stop_rate": 0.57,
+      "attempts": 994,
+      "opp_attempts": 1016
+    },
+    "off_delta": -0.0105,
+    "def_delta": -0.0277,
+    "off_conv_rate": 0.614,
+    "attempts": 254,
+    "off_drive_epa": -0.0338,
+    "def_drive_epa": 0.2438,
+    "ko_return_delta": 0.763,
+    "ko_coverage_delta": -0.275,
+    "ko_return_avg": 30.88,
+    "ko_coverage_avg": 30.67
+  },
+  "JAX": {
+    "team": "JAX",
+    "short": {
+      "off_delta": -0.0056,
+      "def_delta": -0.004,
+      "off_conv_rate": 0.626,
+      "opp_conv_rate": 0.645,
+      "def_stop_rate": 0.355,
+      "attempts": 272,
+      "opp_attempts": 243
+    },
+    "medium": {
+      "off_delta": 0.025,
+      "def_delta": 0.0134,
+      "off_conv_rate": 0.501,
+      "opp_conv_rate": 0.435,
+      "def_stop_rate": 0.565,
+      "attempts": 322,
+      "opp_attempts": 369
+    },
+    "long": {
+      "off_delta": 0.0205,
+      "def_delta": 0.0096,
+      "off_conv_rate": 0.285,
+      "opp_conv_rate": 0.237,
+      "def_stop_rate": 0.763,
+      "attempts": 415,
+      "opp_attempts": 453
+    },
+    "overall": {
+      "off_delta": 0.028,
+      "def_delta": 0.0156,
+      "off_conv_rate": 0.449,
+      "opp_conv_rate": 0.395,
+      "def_stop_rate": 0.605,
+      "attempts": 1009,
+      "opp_attempts": 1065
+    },
+    "off_delta": -0.0056,
+    "def_delta": -0.004,
+    "off_conv_rate": 0.626,
+    "attempts": 272,
+    "off_drive_epa": 0.3324,
+    "def_drive_epa": -0.2275,
+    "ko_return_delta": 0.552,
+    "ko_coverage_delta": -1.215,
+    "ko_return_avg": 30.33,
+    "ko_coverage_avg": 31.22
+  },
+  "KC": {
+    "team": "KC",
+    "short": {
+      "off_delta": 0.0447,
+      "def_delta": 0.0015,
+      "off_conv_rate": 0.718,
+      "opp_conv_rate": 0.632,
+      "def_stop_rate": 0.368,
+      "attempts": 293,
+      "opp_attempts": 311
+    },
+    "medium": {
+      "off_delta": -0.0037,
+      "def_delta": 0.0149,
+      "off_conv_rate": 0.453,
+      "opp_conv_rate": 0.429,
+      "def_stop_rate": 0.571,
+      "attempts": 327,
+      "opp_attempts": 357
+    },
+    "long": {
+      "off_delta": -0.0404,
+      "def_delta": -0.0171,
+      "off_conv_rate": 0.19,
+      "opp_conv_rate": 0.285,
+      "def_stop_rate": 0.715,
+      "attempts": 437,
+      "opp_attempts": 479
+    },
+    "overall": {
+      "off_delta": 0.003,
+      "def_delta": -0.0145,
+      "off_conv_rate": 0.419,
+      "opp_conv_rate": 0.434,
+      "def_stop_rate": 0.566,
+      "attempts": 1057,
+      "opp_attempts": 1147
+    },
+    "off_delta": 0.0447,
+    "def_delta": 0.0015,
+    "off_conv_rate": 0.718,
+    "attempts": 293,
+    "off_drive_epa": 0.0017,
+    "def_drive_epa": -0.0106,
+    "ko_return_delta": -0.275,
+    "ko_coverage_delta": -0.023,
+    "ko_return_avg": 29.72,
+    "ko_coverage_avg": 30.15
+  },
+  "LA": {
+    "team": "LA",
+    "short": {
+      "off_delta": -0.0039,
+      "def_delta": -0.0046,
+      "off_conv_rate": 0.629,
+      "opp_conv_rate": 0.644,
+      "def_stop_rate": 0.356,
+      "attempts": 265,
+      "opp_attempts": 265
+    },
+    "medium": {
+      "off_delta": -0.0764,
+      "def_delta": -0.0146,
+      "off_conv_rate": 0.343,
+      "opp_conv_rate": 0.484,
+      "def_stop_rate": 0.516,
+      "attempts": 356,
+      "opp_attempts": 366
+    },
+    "long": {
+      "off_delta": -0.0356,
+      "def_delta": 0.0126,
+      "off_conv_rate": 0.198,
+      "opp_conv_rate": 0.233,
+      "def_stop_rate": 0.767,
+      "attempts": 385,
+      "opp_attempts": 450
+    },
+    "overall": {
+      "off_delta": -0.0222,
+      "def_delta": -0.0103,
+      "off_conv_rate": 0.389,
+      "opp_conv_rate": 0.428,
+      "def_stop_rate": 0.572,
+      "attempts": 1006,
+      "opp_attempts": 1081
+    },
+    "off_delta": -0.0039,
+    "def_delta": -0.0046,
+    "off_conv_rate": 0.629,
+    "attempts": 265,
+    "off_drive_epa": 0.3159,
+    "def_drive_epa": 0.0157,
+    "ko_return_delta": -0.027,
+    "ko_coverage_delta": -0.256,
+    "ko_return_avg": 30.87,
+    "ko_coverage_avg": 30.28
+  },
+  "LAC": {
+    "team": "LAC",
+    "short": {
+      "off_delta": -0.0043,
+      "def_delta": 0.0064,
+      "off_conv_rate": 0.628,
+      "opp_conv_rate": 0.62,
+      "def_stop_rate": 0.38,
+      "attempts": 296,
+      "opp_attempts": 236
+    },
+    "medium": {
+      "off_delta": 0.0299,
+      "def_delta": 0.0343,
+      "off_conv_rate": 0.505,
+      "opp_conv_rate": 0.395,
+      "def_stop_rate": 0.605,
+      "attempts": 350,
+      "opp_attempts": 346
+    },
+    "long": {
+      "off_delta": -0.0186,
+      "def_delta": -0.0072,
+      "off_conv_rate": 0.227,
+      "opp_conv_rate": 0.266,
+      "def_stop_rate": 0.734,
+      "attempts": 461,
+      "opp_attempts": 426
+    },
+    "overall": {
+      "off_delta": -0.0049,
+      "def_delta": 0.019,
+      "off_conv_rate": 0.409,
+      "opp_conv_rate": 0.39,
+      "def_stop_rate": 0.61,
+      "attempts": 1107,
+      "opp_attempts": 1008
+    },
+    "off_delta": -0.0043,
+    "def_delta": 0.0064,
+    "off_conv_rate": 0.628,
+    "attempts": 296,
+    "off_drive_epa": -0.2897,
+    "def_drive_epa": -0.1488,
+    "ko_return_delta": -0.618,
+    "ko_coverage_delta": 0.096,
+    "ko_return_avg": 30.01,
+    "ko_coverage_avg": 30.52
+  },
+  "LV": {
+    "team": "LV",
+    "short": {
+      "off_delta": -0.027,
+      "def_delta": -0.0152,
+      "off_conv_rate": 0.583,
+      "opp_conv_rate": 0.669,
+      "def_stop_rate": 0.331,
+      "attempts": 228,
+      "opp_attempts": 254
+    },
+    "medium": {
+      "off_delta": -0.0146,
+      "def_delta": -0.0105,
+      "off_conv_rate": 0.436,
+      "opp_conv_rate": 0.48,
+      "def_stop_rate": 0.52,
+      "attempts": 347,
+      "opp_attempts": 322
+    },
+    "long": {
+      "off_delta": -0.049,
+      "def_delta": -0.0163,
+      "off_conv_rate": 0.18,
+      "opp_conv_rate": 0.282,
+      "def_stop_rate": 0.718,
+      "attempts": 399,
+      "opp_attempts": 393
+    },
+    "overall": {
+      "off_delta": -0.0475,
+      "def_delta": -0.0261,
+      "off_conv_rate": 0.358,
+      "opp_conv_rate": 0.449,
+      "def_stop_rate": 0.551,
+      "attempts": 974,
+      "opp_attempts": 969
+    },
+    "off_delta": -0.027,
+    "def_delta": -0.0152,
+    "off_conv_rate": 0.583,
+    "attempts": 228,
+    "off_drive_epa": -0.6215,
+    "def_drive_epa": -0.0722,
+    "ko_return_delta": 1.102,
+    "ko_coverage_delta": -0.859,
+    "ko_return_avg": 31.25,
+    "ko_coverage_avg": 31.37
+  },
+  "MIA": {
+    "team": "MIA",
+    "short": {
+      "off_delta": -0.1017,
+      "def_delta": 0.0127,
+      "off_conv_rate": 0.412,
+      "opp_conv_rate": 0.607,
+      "def_stop_rate": 0.393,
+      "attempts": 208,
+      "opp_attempts": 264
+    },
+    "medium": {
+      "off_delta": 0.0241,
+      "def_delta": -0.0506,
+      "off_conv_rate": 0.503,
+      "opp_conv_rate": 0.561,
+      "def_stop_rate": 0.439,
+      "attempts": 278,
+      "opp_attempts": 329
+    },
+    "long": {
+      "off_delta": -0.0228,
+      "def_delta": 0.0209,
+      "off_conv_rate": 0.22,
+      "opp_conv_rate": 0.215,
+      "def_stop_rate": 0.785,
+      "attempts": 456,
+      "opp_attempts": 417
+    },
+    "overall": {
+      "off_delta": -0.0601,
+      "def_delta": -0.0122,
+      "off_conv_rate": 0.34,
+      "opp_conv_rate": 0.431,
+      "def_stop_rate": 0.569,
+      "attempts": 942,
+      "opp_attempts": 1010
+    },
+    "off_delta": -0.1017,
+    "def_delta": 0.0127,
+    "off_conv_rate": 0.412,
+    "attempts": 208,
+    "off_drive_epa": -0.1635,
+    "def_drive_epa": 0.1315,
+    "ko_return_delta": 1.318,
+    "ko_coverage_delta": -0.712,
+    "ko_return_avg": 31.64,
+    "ko_coverage_avg": 30.73
+  },
+  "MIN": {
+    "team": "MIN",
+    "short": {
+      "off_delta": -0.0253,
+      "def_delta": 0.0031,
+      "off_conv_rate": 0.585,
+      "opp_conv_rate": 0.628,
+      "def_stop_rate": 0.372,
+      "attempts": 229,
+      "opp_attempts": 260
+    },
+    "medium": {
+      "off_delta": 0.0039,
+      "def_delta": 0.0316,
+      "off_conv_rate": 0.466,
+      "opp_conv_rate": 0.395,
+      "def_stop_rate": 0.605,
+      "attempts": 288,
+      "opp_attempts": 318
+    },
+    "long": {
+      "off_delta": 0.0009,
+      "def_delta": 0.0448,
+      "off_conv_rate": 0.255,
+      "opp_conv_rate": 0.179,
+      "def_stop_rate": 0.821,
+      "attempts": 454,
+      "opp_attempts": 458
+    },
+    "overall": {
+      "off_delta": -0.0137,
+      "def_delta": 0.049,
+      "off_conv_rate": 0.398,
+      "opp_conv_rate": 0.351,
+      "def_stop_rate": 0.649,
+      "attempts": 971,
+      "opp_attempts": 1036
+    },
+    "off_delta": -0.0253,
+    "def_delta": 0.0031,
+    "off_conv_rate": 0.585,
+    "attempts": 229,
+    "off_drive_epa": -0.2477,
+    "def_drive_epa": -0.3599,
+    "ko_return_delta": 0.533,
+    "ko_coverage_delta": -0.15,
+    "ko_return_avg": 30.13,
+    "ko_coverage_avg": 30.58
+  },
+  "NE": {
+    "team": "NE",
+    "short": {
+      "off_delta": -0.0181,
+      "def_delta": -0.0129,
+      "off_conv_rate": 0.605,
+      "opp_conv_rate": 0.663,
+      "def_stop_rate": 0.337,
+      "attempts": 222,
+      "opp_attempts": 242
+    },
+    "medium": {
+      "off_delta": -0.0155,
+      "def_delta": 0.0209,
+      "off_conv_rate": 0.436,
+      "opp_conv_rate": 0.423,
+      "def_stop_rate": 0.577,
+      "attempts": 325,
+      "opp_attempts": 342
+    },
+    "long": {
+      "off_delta": 0.0405,
+      "def_delta": 0.0711,
+      "off_conv_rate": 0.309,
+      "opp_conv_rate": 0.143,
+      "def_stop_rate": 0.857,
+      "attempts": 459,
+      "opp_attempts": 469
+    },
+    "overall": {
+      "off_delta": 0.003,
+      "def_delta": 0.0513,
+      "off_conv_rate": 0.419,
+      "opp_conv_rate": 0.351,
+      "def_stop_rate": 0.649,
+      "attempts": 1006,
+      "opp_attempts": 1053
+    },
+    "off_delta": -0.0181,
+    "def_delta": -0.0129,
+    "off_conv_rate": 0.605,
+    "attempts": 222,
+    "off_drive_epa": 0.0516,
+    "def_drive_epa": -0.305,
+    "ko_return_delta": -0.226,
+    "ko_coverage_delta": -0.519,
+    "ko_return_avg": 29.62,
+    "ko_coverage_avg": 30.93
+  },
+  "NO": {
+    "team": "NO",
+    "short": {
+      "off_delta": -0.0017,
+      "def_delta": 0.0102,
+      "off_conv_rate": 0.633,
+      "opp_conv_rate": 0.611,
+      "def_stop_rate": 0.389,
+      "attempts": 236,
+      "opp_attempts": 230
+    },
+    "medium": {
+      "off_delta": 0.0207,
+      "def_delta": 0.0397,
+      "off_conv_rate": 0.491,
+      "opp_conv_rate": 0.382,
+      "def_stop_rate": 0.618,
+      "attempts": 349,
+      "opp_attempts": 316
+    },
+    "long": {
+      "off_delta": -0.0269,
+      "def_delta": 0.0015,
+      "off_conv_rate": 0.213,
+      "opp_conv_rate": 0.251,
+      "def_stop_rate": 0.749,
+      "attempts": 412,
+      "opp_attempts": 460
+    },
+    "overall": {
+      "off_delta": 0.0084,
+      "def_delta": 0.031,
+      "off_conv_rate": 0.425,
+      "opp_conv_rate": 0.375,
+      "def_stop_rate": 0.625,
+      "attempts": 997,
+      "opp_attempts": 1006
+    },
+    "off_delta": -0.0017,
+    "def_delta": 0.0102,
+    "off_conv_rate": 0.633,
+    "attempts": 236,
+    "off_drive_epa": -0.3575,
+    "def_drive_epa": -0.1437,
+    "ko_return_delta": -0.391,
+    "ko_coverage_delta": -0.585,
+    "ko_return_avg": 29.35,
+    "ko_coverage_avg": 30.51
+  },
+  "NYG": {
+    "team": "NYG",
+    "short": {
+      "off_delta": 0.0429,
+      "def_delta": -0.0214,
+      "off_conv_rate": 0.725,
+      "opp_conv_rate": 0.699,
+      "def_stop_rate": 0.301,
+      "attempts": 226,
+      "opp_attempts": 218
+    },
+    "medium": {
+      "off_delta": -0.0153,
+      "def_delta": 0.0098,
+      "off_conv_rate": 0.433,
+      "opp_conv_rate": 0.438,
+      "def_stop_rate": 0.562,
+      "attempts": 348,
+      "opp_attempts": 304
+    },
+    "long": {
+      "off_delta": -0.0033,
+      "def_delta": -0.0171,
+      "off_conv_rate": 0.248,
+      "opp_conv_rate": 0.287,
+      "def_stop_rate": 0.713,
+      "attempts": 497,
+      "opp_attempts": 410
+    },
+    "overall": {
+      "off_delta": -0.0028,
+      "def_delta": -0.0108,
+      "off_conv_rate": 0.412,
+      "opp_conv_rate": 0.43,
+      "def_stop_rate": 0.57,
+      "attempts": 1071,
+      "opp_attempts": 932
+    },
+    "off_delta": 0.0429,
+    "def_delta": -0.0214,
+    "off_conv_rate": 0.725,
+    "attempts": 226,
+    "off_drive_epa": -0.0686,
+    "def_drive_epa": 0.1528,
+    "ko_return_delta": 0.398,
+    "ko_coverage_delta": 0.078,
+    "ko_return_avg": 30.75,
+    "ko_coverage_avg": 29.65
+  },
+  "NYJ": {
+    "team": "NYJ",
+    "short": {
+      "off_delta": 0.018,
+      "def_delta": 0.0165,
+      "off_conv_rate": 0.668,
+      "opp_conv_rate": 0.593,
+      "def_stop_rate": 0.407,
+      "attempts": 225,
+      "opp_attempts": 218
+    },
+    "medium": {
+      "off_delta": -0.086,
+      "def_delta": -0.0092,
+      "off_conv_rate": 0.324,
+      "opp_conv_rate": 0.476,
+      "def_stop_rate": 0.524,
+      "attempts": 339,
+      "opp_attempts": 336
+    },
+    "long": {
+      "off_delta": -0.0335,
+      "def_delta": -0.0072,
+      "off_conv_rate": 0.204,
+      "opp_conv_rate": 0.266,
+      "def_stop_rate": 0.734,
+      "attempts": 485,
+      "opp_attempts": 445
+    },
+    "overall": {
+      "off_delta": -0.051,
+      "def_delta": 0.0013,
+      "off_conv_rate": 0.354,
+      "opp_conv_rate": 0.413,
+      "def_stop_rate": 0.587,
+      "attempts": 1049,
+      "opp_attempts": 999
+    },
+    "off_delta": 0.018,
+    "def_delta": 0.0165,
+    "off_conv_rate": 0.668,
+    "attempts": 225,
+    "off_drive_epa": -0.2482,
+    "def_drive_epa": 0.2961,
+    "ko_return_delta": 1.773,
+    "ko_coverage_delta": -0.512,
+    "ko_return_avg": 32.03,
+    "ko_coverage_avg": 30.88
+  },
+  "PHI": {
+    "team": "PHI",
+    "short": {
+      "off_delta": -0.0257,
+      "def_delta": 0.0095,
+      "off_conv_rate": 0.584,
+      "opp_conv_rate": 0.617,
+      "def_stop_rate": 0.383,
+      "attempts": 266,
+      "opp_attempts": 278
+    },
+    "medium": {
+      "off_delta": 0.0119,
+      "def_delta": -0.0009,
+      "off_conv_rate": 0.478,
+      "opp_conv_rate": 0.461,
+      "def_stop_rate": 0.539,
+      "attempts": 388,
+      "opp_attempts": 385
+    },
+    "long": {
+      "off_delta": 0.0193,
+      "def_delta": -0.0042,
+      "off_conv_rate": 0.28,
+      "opp_conv_rate": 0.26,
+      "def_stop_rate": 0.74,
+      "attempts": 481,
+      "opp_attempts": 490
+    },
+    "overall": {
+      "off_delta": -0.0101,
+      "def_delta": -0.0005,
+      "off_conv_rate": 0.403,
+      "opp_conv_rate": 0.416,
+      "def_stop_rate": 0.584,
+      "attempts": 1135,
+      "opp_attempts": 1153
+    },
+    "off_delta": -0.0257,
+    "def_delta": 0.0095,
+    "off_conv_rate": 0.584,
+    "attempts": 266,
+    "off_drive_epa": 0.1203,
+    "def_drive_epa": -0.2119,
+    "ko_return_delta": 0.487,
+    "ko_coverage_delta": 0.192,
+    "ko_return_avg": 30.66,
+    "ko_coverage_avg": 29.54
+  },
+  "PIT": {
+    "team": "PIT",
+    "short": {
+      "off_delta": 0.0176,
+      "def_delta": 0.0087,
+      "off_conv_rate": 0.668,
+      "opp_conv_rate": 0.618,
+      "def_stop_rate": 0.382,
+      "attempts": 247,
+      "opp_attempts": 265
+    },
+    "medium": {
+      "off_delta": -0.0618,
+      "def_delta": -0.0383,
+      "off_conv_rate": 0.362,
+      "opp_conv_rate": 0.528,
+      "def_stop_rate": 0.472,
+      "attempts": 327,
+      "opp_attempts": 322
+    },
+    "long": {
+      "off_delta": -0.0084,
+      "def_delta": 0.0123,
+      "off_conv_rate": 0.241,
+      "opp_conv_rate": 0.232,
+      "def_stop_rate": 0.768,
+      "attempts": 456,
+      "opp_attempts": 450
+    },
+    "overall": {
+      "off_delta": -0.0331,
+      "def_delta": -0.0139,
+      "off_conv_rate": 0.376,
+      "opp_conv_rate": 0.433,
+      "def_stop_rate": 0.567,
+      "attempts": 1030,
+      "opp_attempts": 1037
+    },
+    "off_delta": 0.0176,
+    "def_delta": 0.0087,
+    "off_conv_rate": 0.668,
+    "attempts": 247,
+    "off_drive_epa": -0.1956,
+    "def_drive_epa": -0.0655,
+    "ko_return_delta": 0.155,
+    "ko_coverage_delta": 0.297,
+    "ko_return_avg": 30.24,
+    "ko_coverage_avg": 29.98
+  },
+  "SEA": {
+    "team": "SEA",
+    "short": {
+      "off_delta": -0.0153,
+      "def_delta": 0.0779,
+      "off_conv_rate": 0.608,
+      "opp_conv_rate": 0.49,
+      "def_stop_rate": 0.51,
+      "attempts": 221,
+      "opp_attempts": 278
+    },
+    "medium": {
+      "off_delta": 0.0303,
+      "def_delta": 0.0547,
+      "off_conv_rate": 0.508,
+      "opp_conv_rate": 0.37,
+      "def_stop_rate": 0.63,
+      "attempts": 280,
+      "opp_attempts": 367
+    },
+    "long": {
+      "off_delta": -0.0315,
+      "def_delta": 0.0097,
+      "off_conv_rate": 0.209,
+      "opp_conv_rate": 0.237,
+      "def_stop_rate": 0.763,
+      "attempts": 448,
+      "opp_attempts": 452
+    },
+    "overall": {
+      "off_delta": -0.0178,
+      "def_delta": 0.0506,
+      "off_conv_rate": 0.394,
+      "opp_conv_rate": 0.353,
+      "def_stop_rate": 0.647,
+      "attempts": 949,
+      "opp_attempts": 1097
+    },
+    "off_delta": -0.0153,
+    "def_delta": 0.0779,
+    "off_conv_rate": 0.608,
+    "attempts": 221,
+    "off_drive_epa": 0.2246,
+    "def_drive_epa": -0.4108,
+    "ko_return_delta": 0.514,
+    "ko_coverage_delta": 0.86,
+    "ko_return_avg": 30.45,
+    "ko_coverage_avg": 28.73
+  },
+  "SF": {
+    "team": "SF",
+    "short": {
+      "off_delta": 0.0275,
+      "def_delta": 0.0251,
+      "off_conv_rate": 0.682,
+      "opp_conv_rate": 0.584,
+      "def_stop_rate": 0.416,
+      "attempts": 248,
+      "opp_attempts": 275
+    },
+    "medium": {
+      "off_delta": 0.0162,
+      "def_delta": 0.0069,
+      "off_conv_rate": 0.484,
+      "opp_conv_rate": 0.446,
+      "def_stop_rate": 0.554,
+      "attempts": 324,
+      "opp_attempts": 351
+    },
+    "long": {
+      "off_delta": 0.094,
+      "def_delta": 0.0101,
+      "off_conv_rate": 0.405,
+      "opp_conv_rate": 0.235,
+      "def_stop_rate": 0.765,
+      "attempts": 403,
+      "opp_attempts": 448
+    },
+    "overall": {
+      "off_delta": 0.0837,
+      "def_delta": 0.0079,
+      "off_conv_rate": 0.516,
+      "opp_conv_rate": 0.405,
+      "def_stop_rate": 0.595,
+      "attempts": 975,
+      "opp_attempts": 1074
+    },
+    "off_delta": 0.0275,
+    "def_delta": 0.0251,
+    "off_conv_rate": 0.682,
+    "attempts": 248,
+    "off_drive_epa": 0.2663,
+    "def_drive_epa": 0.048,
+    "ko_return_delta": 1.407,
+    "ko_coverage_delta": -0.105,
+    "ko_return_avg": 32.13,
+    "ko_coverage_avg": 31.08
+  },
+  "TB": {
+    "team": "TB",
+    "short": {
+      "off_delta": 0.023,
+      "def_delta": 0.0103,
+      "off_conv_rate": 0.679,
+      "opp_conv_rate": 0.611,
+      "def_stop_rate": 0.389,
+      "attempts": 250,
+      "opp_attempts": 238
+    },
+    "medium": {
+      "off_delta": 0.0335,
+      "def_delta": 0.0051,
+      "off_conv_rate": 0.514,
+      "opp_conv_rate": 0.449,
+      "def_stop_rate": 0.551,
+      "attempts": 360,
+      "opp_attempts": 350
+    },
+    "long": {
+      "off_delta": 0.0168,
+      "def_delta": -0.0358,
+      "off_conv_rate": 0.278,
+      "opp_conv_rate": 0.317,
+      "def_stop_rate": 0.683,
+      "attempts": 467,
+      "opp_attempts": 467
+    },
+    "overall": {
+      "off_delta": 0.0284,
+      "def_delta": -0.0126,
+      "off_conv_rate": 0.449,
+      "opp_conv_rate": 0.432,
+      "def_stop_rate": 0.568,
+      "attempts": 1077,
+      "opp_attempts": 1055
+    },
+    "off_delta": 0.023,
+    "def_delta": 0.0103,
+    "off_conv_rate": 0.679,
+    "attempts": 250,
+    "off_drive_epa": -0.0446,
+    "def_drive_epa": 0.0768,
+    "ko_return_delta": -0.266,
+    "ko_coverage_delta": -0.671,
+    "ko_return_avg": 29.34,
+    "ko_coverage_avg": 31.18
+  },
+  "TEN": {
+    "team": "TEN",
+    "short": {
+      "off_delta": -0.011,
+      "def_delta": -0.0425,
+      "off_conv_rate": 0.613,
+      "opp_conv_rate": 0.741,
+      "def_stop_rate": 0.259,
+      "attempts": 203,
+      "opp_attempts": 243
+    },
+    "medium": {
+      "off_delta": -0.0249,
+      "def_delta": 0.0267,
+      "off_conv_rate": 0.421,
+      "opp_conv_rate": 0.404,
+      "def_stop_rate": 0.596,
+      "attempts": 317,
+      "opp_attempts": 311
+    },
+    "long": {
+      "off_delta": -0.0427,
+      "def_delta": 0.0095,
+      "off_conv_rate": 0.192,
+      "opp_conv_rate": 0.236,
+      "def_stop_rate": 0.764,
+      "attempts": 460,
+      "opp_attempts": 403
+    },
+    "overall": {
+      "off_delta": -0.0496,
+      "def_delta": 0.0007,
+      "off_conv_rate": 0.356,
+      "opp_conv_rate": 0.414,
+      "def_stop_rate": 0.586,
+      "attempts": 980,
+      "opp_attempts": 957
+    },
+    "off_delta": -0.011,
+    "def_delta": -0.0425,
+    "off_conv_rate": 0.613,
+    "attempts": 203,
+    "off_drive_epa": -0.4557,
+    "def_drive_epa": 0.2781,
+    "ko_return_delta": 0.377,
+    "ko_coverage_delta": -0.299,
+    "ko_return_avg": 30.56,
+    "ko_coverage_avg": 31.87
+  },
+  "WAS": {
+    "team": "WAS",
+    "short": {
+      "off_delta": -0.0041,
+      "def_delta": 0.0196,
+      "off_conv_rate": 0.628,
+      "opp_conv_rate": 0.594,
+      "def_stop_rate": 0.406,
+      "attempts": 271,
+      "opp_attempts": 247
+    },
+    "medium": {
+      "off_delta": 0.0051,
+      "def_delta": -0.0209,
+      "off_conv_rate": 0.468,
+      "opp_conv_rate": 0.501,
+      "def_stop_rate": 0.499,
+      "attempts": 338,
+      "opp_attempts": 315
+    },
+    "long": {
+      "off_delta": 0.0103,
+      "def_delta": -0.0278,
+      "off_conv_rate": 0.269,
+      "opp_conv_rate": 0.301,
+      "def_stop_rate": 0.699,
+      "attempts": 421,
+      "opp_attempts": 437
+    },
+    "overall": {
+      "off_delta": 0.0079,
+      "def_delta": -0.0211,
+      "off_conv_rate": 0.425,
+      "opp_conv_rate": 0.443,
+      "def_stop_rate": 0.557,
+      "attempts": 1030,
+      "opp_attempts": 999
+    },
+    "off_delta": -0.0041,
+    "def_delta": 0.0196,
+    "off_conv_rate": 0.628,
+    "attempts": 271,
+    "off_drive_epa": 0.0683,
+    "def_drive_epa": 0.3623,
+    "ko_return_delta": 0.086,
+    "ko_coverage_delta": 0.194,
+    "ko_return_avg": 31.05,
+    "ko_coverage_avg": 29.46
+  },
+  "_meta": {
+    "kickoff_baseline": 30.45,
+    "kickoff_rule_year": 2024
+  }
+}
