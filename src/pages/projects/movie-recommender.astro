@@ -3,6 +3,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import { SITE_TITLE } from '../../consts';
+import '../../styles/academic-project.css';
 ---
 
 <!doctype html>
@@ -12,11 +13,11 @@ import { SITE_TITLE } from '../../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main class="academic-project">
 			<div class="project-header">
 				<p class="project-context">Computer Science Capstone · August - December 2024</p>
 				<h1>Movie Recommendation Application</h1>
-				<p class="subtitle">Connecting conversation to data: a full-stack application for managing movie preferences and retrieving recommendations through natural language.</p>
+				<p class="subtitle">A full-stack Python application connecting natural-language requests to user profiles, movie preferences, and recommendation retrieval in PostgreSQL.</p>
 				<p class="project-context">Advanced Data Management Technologies Laboratory · University of Pittsburgh</p>
 				<ul class="technologies" aria-label="Technologies used">
 					<li>Python</li>
@@ -28,16 +29,16 @@ import { SITE_TITLE } from '../../consts';
 			</div>
 
 			<section class="prose glass-card">
-				<h2>About the Project</h2>
-				<p>Movie preferences are easy to describe in conversation, but an application needs structured information to store and use them. This project explored how a natural-language interface could bridge that gap, letting users share their tastes while the application handled the database interactions behind the scenes.</p>
-				<p>As part of my computer science capstone in the ADMT Laboratory, I developed a full-stack application supporting a movie recommendation system. It integrated the OpenAI API with PostgreSQL to manage user profiles and preferences, translate requests into SQL, and turn database query results into conversational responses.</p>
+				<h2>Project Overview</h2>
+				<p>I developed the application layer supporting a movie recommendation system, integrating a Streamlit interface, Python application logic, the OpenAI API, and PostgreSQL. Users could provide profile information and movie preferences conversationally, with the application translating their requests into database operations and returning natural-language responses.</p>
+				<p>The core engineering challenge was coordinating a multi-step conversation with persistent data: interpreting flexible user input, storing the relevant information, and retrieving it for subsequent interactions.</p>
 			</section>
 
 			<section class="prose glass-card">
-				<h2>My Contribution</h2>
-				<p>My work focused on the user-facing application and the connections between the interface, language model, and database. I built the conversation flow, implemented profile and preference storage, and developed the pipeline for preference updates and recommendation retrieval.</p>
-				<p>The interface collected information such as a user's name, preferred genres, and movie ratings. Language-model integration allowed users to answer naturally instead of following a rigid input format. The application extracted relevant information from their responses and asked again when an answer did not address the question.</p>
-				<p>PostgreSQL preserved profile information and preferences for returning users, giving the application continuity across interactions.</p>
+				<h2>My Responsibilities</h2>
+				<p>I built the user interface and the integrations connecting it to the language model and database. My scope covered the conversation flow, profile and preference storage, and the request-to-SQL pipeline supporting preference updates and recommendation retrieval.</p>
+				<p>The interface collected names, genre preferences, and movie ratings. I integrated language-model processing to extract relevant information from short answers or full sentences and prompt users again when their responses did not address the question.</p>
+				<p>I implemented PostgreSQL storage and retrieval so the application could recognize returning profiles and reuse saved preferences without repeating the initial rating collection.</p>
 			</section>
 
 			<section class="prose glass-card">
@@ -51,60 +52,12 @@ import { SITE_TITLE } from '../../consts';
 			</section>
 
 			<section class="prose glass-card">
-				<h2>Design Decisions & Takeaways</h2>
-				<p>I initially adapted an existing research chatbot, then reorganized the application around the more involved conversation flow this project required. Moving the interface to Streamlit brought it into the same Python environment as the application logic and simplified the back-and-forth between user input, API calls, and database operations.</p>
-				<p>The project strengthened my experience with API integration, SQL, and frontend development. Its central lesson was how to connect flexible conversational input with structured, persistent data—a pattern that extends beyond movie recommendations to other applications that collect and retrieve user information.</p>
+				<h2>Engineering Decisions</h2>
+				<p><strong>Consolidating the application in Python.</strong> The initial React and Flask structure required repeated coordination between separate frontend and backend layers during the conversation. I moved the interface to Streamlit and reorganized the existing Python code, bringing conversation handling, API calls, and database operations into a simpler application structure.</p>
+				<p><strong>Separating conversational input from stored information.</strong> Language-model processing extracted the information needed at each step, allowing flexible phrasing while preserving structured profile and preference data in PostgreSQL.</p>
+				<p><strong>Supporting recommendation integration.</strong> I structured the application to accommodate recommendation functionality through an API, keeping the interface and data-management work adaptable as the broader system evolved.</p>
 			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
-
-<style>
-	.project-header {
-		margin-bottom: 2em;
-	}
-	.subtitle {
-		font-size: 1.25em;
-		color: var(--text-muted);
-	}
-	.project-context {
-		color: var(--text-muted);
-	}
-	.technologies {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5em;
-		list-style: none;
-		padding: 0;
-		margin: 1.5em 0 0;
-	}
-	.technologies li {
-		padding: 0.3em 0.75em;
-		border: 1px solid var(--border-color);
-		border-radius: 6px;
-		color: var(--accent);
-	}
-	section {
-		margin-bottom: 1.5em;
-	}
-	.prose p:last-child {
-		margin-bottom: 0;
-	}
-	.pipeline {
-		padding-left: 1.5em;
-		margin-bottom: 0;
-		color: var(--text-muted);
-	}
-	.pipeline li + li {
-		margin-top: 1em;
-	}
-	.pipeline strong {
-		color: var(--text-main);
-	}
-	@media (max-width: 720px) {
-		.glass-card {
-			padding: 1.5em;
-		}
-	}
-</style>
