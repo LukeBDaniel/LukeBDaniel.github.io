@@ -13,30 +13,118 @@ import '../../styles/academic-project.css';
 	</head>
 	<body>
 		<Header />
-		<main class="professional-project">
-			<div class="project-header">
+			<main class="professional-project">
+				<div class="results-gallery top-results">
+					<figure class="project-figure">
+						<a href="/assets/images/projects/vectorscribe-einstein.webp" target="_blank" rel="noopener noreferrer" aria-label="View the Einstein print at full size"><img src="/assets/images/projects/vectorscribe-einstein.webp" alt="A rainbow-colored portrait of Albert Einstein on a mounted optical sample" width="1600" height="1067" /></a>
+					</figure>
+					<figure class="project-figure">
+						<a href="/assets/images/projects/vectorscribe-hardware.webp" target="_blank" rel="noopener noreferrer" aria-label="View the VectorScribe hardware photo at full size"><img src="/assets/images/projects/vectorscribe-hardware.webp" alt="Optical components and positioning hardware in the VectorScribe lab" width="1600" height="1100" /></a>
+					</figure>
+				</div>
+				<div class="project-header">
 				<p class="project-context">Software Engineer · August 2025 - Present</p>
 				<div class="company-heading">
 					<img src="/assets/images/projects/vectorscribe-logo.png" alt="VectorScribe logo" width="556" height="376" />
 					<h1>VectorScribe</h1>
 				</div>
-				<p class="subtitle">Python software for controlling laser holographic microprinters, from configuring print patterns to executing hardware routines.</p>
+				<p class="subtitle">Developing Python software for controlling laser holographic microprinters.</p>
 				<p class="project-context">VectorScribe, LLC · Bethlehem, PA</p>
 
 				<a href="https://www.vector-scribe.com/" target="_blank" rel="noopener noreferrer" class="project-link">Visit VectorScribe’s Website &rarr;</a>
 			</div>
 
-			<section class="prose glass-card">
-				<h2>My Work</h2>
-				<p>I consolidated legacy Python codebases into one control platform supporting multiple printer generations. Refactoring image-processing algorithms and optimizing hardware-control routines substantially reduced print execution time.</p>
-				<p>I also designed and deployed a custom interface for configuring print patterns and hardware parameters, and established the company’s GitHub organization and lab deployment pipelines to streamline collaboration.</p>
-			</section>
+				<section class="prose glass-card">
+				<h2>My Experience & Contributions</h2>
+				<p>At VectorScribe, I develop Python software for laser holographic microprinters, working directly with the engineers who build and operate the hardware to understand their requirements and the constraints of each setup.</p>
+				<ul class="contributions">
+					<li>
+						<strong>Substantially reduced print execution time.</strong>
+						<p>I refactored image-processing algorithms, removed inefficient workflows, and optimized hardware control and motor movement. For larger prints, this reduced run times by hours.</p>
+					</li>
+					<li>
+						<strong>Expanded print customization through a new user interface.</strong>
+						<p>I built configurable controls for hardware parameters and implemented new pattern options. These enable complex designs with multiple patterns at different scales, alignments, and orientations. The new interface is also simpler and easier to use.</p>
+					</li>
+					<li>
+						<strong>Unified software across multiple hardware generations.</strong>
+						<p>I overhauled the codebase, consolidating legacy Python programs into one platform and streamlining the development and testing pipeline. I focused on making the code well-organized and modular, making it easier to maintain and extend.</p>
+					</li>
+				</ul>
+				</section>
+
+				<div class="video-showcase">
+					<figure class="project-figure tilt-demo"><video controls muted loop playsinline preload="none" poster="/assets/images/projects/vectorscribe-tilt-poster.webp" width="720" height="1280" aria-label="Printed optical pattern changing color as the sample is tilted" aria-describedby="tilt-caption"><source src="/assets/videos/vectorscribe-tilt.mp4" type="video/mp4" /><a href="/assets/videos/vectorscribe-tilt.mp4">Watch the tilt demonstration</a></video><figcaption id="tilt-caption"><strong>An example of a larger print.</strong> The software I wrote allows for larger, more complex prints while cutting down run times by hours.</figcaption></figure>
+					<figure class="project-figure custom-demo"><video controls muted loop playsinline preload="none" poster="/assets/images/projects/vectorscribe-custom-poster.webp" width="1280" height="720" aria-label="Custom printed samples combining lettering and geometric patterns" aria-describedby="custom-caption"><source src="/assets/videos/vectorscribe-custom.mp4" type="video/mp4" /><a href="/assets/videos/vectorscribe-custom.mp4">Watch the custom-pattern demonstration</a></video><figcaption id="custom-caption"><strong>Highly customized print patterns.</strong> The new interface allows for much more complex multi-pattern designs at variable scales, alignments, or orientations.</figcaption></figure>
+				</div>
 		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
+	.contributions {
+		padding-left: 1.25rem;
+		margin-bottom: 0;
+	}
+	.contributions li + li {
+		margin-top: 1.5rem;
+	}
+	.contributions strong {
+		color: var(--text-main);
+	}
+	.contributions p {
+		margin-top: 0.4rem;
+	}
+	.video-showcase {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: center;
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+	.video-showcase .project-figure {
+		margin: 0;
+	}
+	.video-showcase video {
+		display: block;
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		border-radius: 12px;
+		background: #080b10;
+	}
+	.video-showcase figcaption strong {
+		color: var(--text-main);
+	}
+	@media (max-width: 720px) {
+		.video-showcase {
+			grid-template-columns: minmax(0, 1fr);
+		}
+		.tilt-demo {
+			width: min(100%, 340px);
+			justify-self: center;
+		}
+	}
+	.results-gallery {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5rem;
+	}
+	.results-gallery .project-figure {
+		margin: 0;
+	}
+	.results-gallery img {
+		aspect-ratio: 3 / 2;
+		object-fit: contain;
+		background: #080b10;
+	}
+	@media (max-width: 720px) {
+		.results-gallery {
+			grid-template-columns: 1fr;
+		}
+	}
 	.company-heading {
 		display: flex;
 		align-items: center;
