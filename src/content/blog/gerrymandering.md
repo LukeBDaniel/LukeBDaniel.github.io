@@ -2,6 +2,8 @@
 title: "Visualizing the Impact of Partisan Gerrymandering"
 description: "How state lines and district boundaries shape the US House of Representatives."
 pubDate: 'Aug 09 2025'
+thumbnail: "/assets/images/thumbnails/gerrymandering.webp"
+thumbnailAlt: "Map of partisan seat advantages by state"
 ---
 
 The United States House of Representatives was designed to closely mirror the political will of the people. However, due to how district boundaries are drawn within each state—a process known as gerrymandering—the actual partisan makeup of the House frequently diverges from statewide popular vote totals.

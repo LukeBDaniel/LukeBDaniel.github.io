@@ -57,3 +57,21 @@
 	background: var(--accent);
 	color: var(--bg-primary);
 }
+
+.academic-project .project-figure {
+	margin: 2em 0;
+}
+.academic-project .project-figure img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 12px;
+	border: 1px solid var(--border-color);
+	box-sizing: border-box;
+}
+.academic-project .project-figure figcaption {
+	margin-top: 0.75em;
+	color: var(--text-muted);
+	font-size: 0.9rem;
+	line-height: 1.6;
+}

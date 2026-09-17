@@ -36,11 +36,13 @@ const posts = (await getCollection('blog')).sort(
 				<h2>Academic Projects</h2>
 				<div class="projects-grid">
 					<a href="/projects/gasp-violations" class="glass-card project-card">
+						<img class="project-thumbnail" src="/assets/images/thumbnails/gasp-dashboard.webp" alt="GASP dashboard with a facility map and air-quality violation charts" width="960" height="540" loading="lazy" />
 						<span class="project-date">January - April 2025</span>
 						<h3>Visualizing Industrial Impact in Allegheny County</h3>
 						<p>A data analytics capstone project for GASP (Group Against Smog & Pollution) visualizing 5 years of air quality violations and fines from major industrial polluters.</p>
 					</a>
 					<a href="/projects/movie-recommender" class="glass-card project-card">
+						<img class="project-thumbnail" src="/assets/images/thumbnails/movie-architecture.webp" alt="Movie chatbot architecture connecting the frontend, Python API, language model, and database" width="960" height="540" loading="lazy" />
 						<span class="project-date">August - December 2024</span>
 						<h3>Movie Recommendation Application</h3>
 						<p>A computer science capstone connecting a natural-language interface, the OpenAI API, and PostgreSQL to manage user profiles, update movie preferences, and retrieve recommendations.</p>
@@ -73,10 +75,13 @@ const posts = (await getCollection('blog')).sort(
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.slug}/`} class="glass-card">
+								<a href={`/blog/${post.slug}/`} class="glass-card article-card">
+									{post.data.thumbnail && <img class="article-thumbnail" src={post.data.thumbnail} alt={post.data.thumbnailAlt ?? ''} width="480" height="270" loading="lazy" />}
+									<div class="article-copy">
 									<span class="date">{post.data.pubDate.toLocaleDateString()}</span>
 									<h3>{post.data.title}</h3>
 									<p>{post.data.description}</p>
+									</div>
 								</a>
 							</li>
 						))
@@ -140,7 +145,7 @@ const posts = (await getCollection('blog')).sort(
 	}
 	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
 		gap: 2em;
 		margin-top: 1.5em;
 	}
@@ -152,6 +157,29 @@ const posts = (await getCollection('blog')).sort(
 		color: var(--text-muted);
 		font-size: 0.9em;
 		margin-bottom: 0.5em;
+	}
+	.project-thumbnail, .article-thumbnail {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		object-fit: contain;
+		background: #fff;
+		border-radius: 8px;
+	}
+	.project-thumbnail {
+		margin-bottom: 1.25em;
+	}
+	ul.post-list li a.article-card {
+		display: grid;
+		grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+		align-items: center;
+		gap: 1.5em;
+	}
+	@media (max-width: 720px) {
+		ul.post-list li a.article-card {
+			grid-template-columns: 1fr;
+		}
 	}
 	.project-card p, ul.post-list li p {
 		margin: 0;

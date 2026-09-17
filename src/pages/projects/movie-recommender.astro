@@ -41,6 +41,13 @@ import '../../styles/academic-project.css';
 				<p>I implemented PostgreSQL storage and retrieval so the application could recognize returning profiles and reuse saved preferences without repeating the initial rating collection.</p>
 			</section>
 
+			<figure class="project-figure">
+				<a href="/assets/images/projects/movie-interface.webp" target="_blank" rel="noopener noreferrer" aria-label="View movie chatbot interface at full size">
+					<img src="/assets/images/projects/movie-interface.webp" width="928" height="892" alt="Movie chatbot extracting profile information from conversational replies and asking again after an irrelevant response" loading="lazy" />
+				</a>
+				<figcaption>The chatbot collects profile information through natural-language replies and prompts again when an answer does not address the question.</figcaption>
+			</figure>
+
 			<section class="prose glass-card">
 				<h2>How It Works</h2>
 				<ol class="pipeline">
@@ -50,6 +57,13 @@ import '../../styles/academic-project.css';
 					<li><strong>Respond in natural language.</strong> Database query results are translated into a readable response and returned through the interface.</li>
 				</ol>
 			</section>
+
+			<figure class="project-figure">
+				<a href="/assets/images/projects/movie-architecture.webp" target="_blank" rel="noopener noreferrer" aria-label="View application architecture diagram at full size">
+					<img src="/assets/images/projects/movie-architecture.webp" width="1164" height="623" alt="Architecture diagram showing natural-language requests moving through a React frontend, Python API, language model, and PostgreSQL database" loading="lazy" />
+				</a>
+				<figcaption>The original chatbot architecture that informed this project, showing the request-to-SQL and response flow. The movie application later moved to Streamlit, as described below.</figcaption>
+			</figure>
 
 			<section class="prose glass-card">
 				<h2>Engineering Decisions</h2>

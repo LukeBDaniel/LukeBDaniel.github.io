@@ -2,6 +2,8 @@
 title: "The NFL Contention Cycle"
 description: "Visualizing how NFL teams have transitioned between rebuilding and competing over the last decade."
 pubDate: 'Jan 08 2026'
+thumbnail: "/assets/images/thumbnails/nfl_cycle.webp"
+thumbnailAlt: "NFL teams plotted by present performance and future outlook"
 ---
 
 In the NFL, success is fleeting. Dynasties rise and fall, rebuilds succeed and fail, and every season brings new contenders. But how can we visualize this constant churn? What if we could see how teams move through the competitive landscape over time—from rebuilding to contending, from elite to struggling, and back again?
