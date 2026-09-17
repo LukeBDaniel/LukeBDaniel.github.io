@@ -26,8 +26,9 @@ const posts = (await getCollection('blog')).sort(
 				<div class="hero-text">
 					<h1>Luke Daniel</h1>
 					<p class="subtitle">
-						A collection of personal and academic projects I have developed.
+						Software engineer and graduate student working across data science, applied AI, and sports analytics.
 					</p>
+					<a href="/about" class="about-link">More about me &rarr;</a>
 				</div>
 			</div>
 
@@ -118,6 +119,11 @@ const posts = (await getCollection('blog')).sort(
 		color: var(--text-muted);
 		max-width: 600px;
 		margin: 0;
+	}
+	.about-link {
+		display: inline-block;
+		margin-top: 1em;
+		font-weight: 600;
 	}
 	@media (max-width: 720px) {
 		.hero {
