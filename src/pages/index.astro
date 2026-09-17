@@ -35,10 +35,12 @@ const posts = (await getCollection('blog')).sort(
 				<h2>Academic Projects</h2>
 				<div class="projects-grid">
 					<a href="/projects/gasp-violations" class="glass-card project-card">
+						<span class="project-date">January - April 2025</span>
 						<h3>Visualizing Industrial Impact in Allegheny County</h3>
 						<p>A data analytics capstone project for GASP (Group Against Smog & Pollution) visualizing 5 years of air quality violations and fines from major industrial polluters.</p>
 					</a>
 					<a href="/projects/movie-recommender" class="glass-card project-card">
+						<span class="project-date">August - December 2024</span>
 						<h3>Movie Recommendation Application</h3>
 						<p>A computer science capstone connecting a natural-language interface, the OpenAI API, and PostgreSQL to manage user profiles, update movie preferences, and retrieve recommendations.</p>
 					</a>
@@ -139,6 +141,11 @@ const posts = (await getCollection('blog')).sort(
 	.project-card {
 		display: flex;
 		flex-direction: column;
+	}
+	.project-date {
+		color: var(--text-muted);
+		font-size: 0.9em;
+		margin-bottom: 0.5em;
 	}
 	.project-card p, ul.post-list li p {
 		margin: 0;
