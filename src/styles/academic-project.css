@@ -1,14 +1,14 @@
-	.academic-project .project-header {
+	:is(.academic-project, .professional-project) .project-header {
 		margin-bottom: 2em;
 	}
-	.academic-project .subtitle {
+	:is(.academic-project, .professional-project) .subtitle {
 		font-size: 1.25em;
 		color: var(--text-muted);
 	}
-	.academic-project .project-context {
+	:is(.academic-project, .professional-project) .project-context {
 		color: var(--text-muted);
 	}
-	.academic-project .technologies {
+	:is(.academic-project, .professional-project) .technologies {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5em;
@@ -16,36 +16,36 @@
 		padding: 0;
 		margin: 1.5em 0 0;
 	}
-	.academic-project .technologies li {
+	:is(.academic-project, .professional-project) .technologies li {
 		padding: 0.3em 0.75em;
 		border: 1px solid var(--border-color);
 		border-radius: 6px;
 		color: var(--accent);
 	}
-	.academic-project section {
+	:is(.academic-project, .professional-project) section {
 		margin-bottom: 1.5em;
 	}
-	.academic-project .prose p:last-child {
+	:is(.academic-project, .professional-project) .prose p:last-child {
 		margin-bottom: 0;
 	}
-	.academic-project .pipeline {
+	:is(.academic-project, .professional-project) .pipeline {
 		padding-left: 1.5em;
 		margin-bottom: 0;
 		color: var(--text-muted);
 	}
-	.academic-project .pipeline li + li {
+	:is(.academic-project, .professional-project) .pipeline li + li {
 		margin-top: 1em;
 	}
-	.academic-project .pipeline strong {
+	:is(.academic-project, .professional-project) .pipeline strong {
 		color: var(--text-main);
 	}
 	@media (max-width: 720px) {
-		.academic-project .glass-card {
+		:is(.academic-project, .professional-project) .glass-card {
 			padding: 1.5em;
 		}
 	}
 
-.academic-project .project-link {
+:is(.academic-project, .professional-project) .project-link {
 	display: inline-block;
 	margin-top: 1.5em;
 	padding: 0.75em 1.5em;
@@ -53,15 +53,15 @@
 	border-radius: 8px;
 	font-weight: 600;
 }
-.academic-project .project-link:hover {
+:is(.academic-project, .professional-project) .project-link:hover {
 	background: var(--accent);
 	color: var(--bg-primary);
 }
 
-.academic-project .project-figure {
+:is(.academic-project, .professional-project) .project-figure {
 	margin: 2em 0;
 }
-.academic-project .project-figure img {
+:is(.academic-project, .professional-project) .project-figure img {
 	display: block;
 	width: 100%;
 	height: auto;
@@ -69,7 +69,7 @@
 	border: 1px solid var(--border-color);
 	box-sizing: border-box;
 }
-.academic-project .project-figure figcaption {
+:is(.academic-project, .professional-project) .project-figure figcaption {
 	margin-top: 0.75em;
 	color: var(--text-muted);
 	font-size: 0.9rem;

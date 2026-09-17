@@ -1,0 +1,55 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+import '../../styles/academic-project.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`VectorScribe | ${SITE_TITLE}`} description="My software engineering work at VectorScribe: Python control software, image processing, and deployment for laser holographic microprinting." />
+	</head>
+	<body>
+		<Header />
+		<main class="professional-project">
+			<div class="project-header">
+				<p class="project-context">Software Engineer · August 2025 - Present</p>
+				<h1>VectorScribe</h1>
+				<p class="subtitle">Python software for controlling laser holographic microprinters, from configuring print patterns to executing hardware routines.</p>
+				<p class="project-context">VectorScribe, LLC · Bethlehem, PA</p>
+				<ul class="technologies" aria-label="Technologies and areas of work">
+					<li>Python</li>
+					<li>Image Processing</li>
+					<li>Hardware Control</li>
+					<li>GitHub</li>
+				</ul>
+				<a href="https://www.vector-scribe.com/" target="_blank" rel="noopener noreferrer" class="project-link">Visit VectorScribe’s Website &rarr;</a>
+			</div>
+
+			<section class="prose glass-card">
+				<h2>My Role</h2>
+				<p>At VectorScribe, I develop full-stack Python software for a laser holographic microprinter. My work spans the user interface, image processing, hardware control, and the deployment process used in the lab.</p>
+				<p>A central part of the role has been consolidating legacy codebases into one platform that supports multiple printer generations. Alongside that work, I have improved print execution performance and built controls for configuring print patterns and hardware parameters.</p>
+			</section>
+
+			<section class="prose glass-card">
+				<h2>Software & Print Performance</h2>
+				<p>I brought the existing codebases together into a shared Python platform, supporting multiple generations of printer hardware within one application.</p>
+				<p>I also refactored image-processing algorithms and optimized hardware-control routines, substantially reducing print execution time. This work connected changes in the software directly to the operation of the physical printer.</p>
+			</section>
+
+			<section class="prose glass-card">
+				<h2>Interface & Configuration</h2>
+				<p>I designed and deployed a custom user interface for configuring print patterns and hardware parameters. The interface brings those settings into the control application, providing access to both pattern customization and hardware configuration.</p>
+			</section>
+
+			<section class="prose glass-card">
+				<h2>Collaboration & Deployment</h2>
+				<p>I established the company’s GitHub organization and lab deployment pipelines to streamline collaboration and the delivery of software updates to the lab.</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
