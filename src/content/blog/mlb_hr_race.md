@@ -4,6 +4,8 @@ description: "A short project visualizing Aaron Judge's 2022 home run chase usin
 pubDate: 'Sep 12 2022'
 thumbnail: "/assets/images/thumbnails/mlb_hr_race.webp"
 thumbnailAlt: "Home run totals for Aaron Judge, Roger Maris, and Barry Bonds"
+thumbnailWidth: 480
+thumbnailHeight: 480
 ---
 
 This is a little project I did while learning R where I compared Aaron Judge's 2022 season home run total to that of Roger Maris in 1961 and Barry Bonds in 2001. I started by importing all the data from https://baseball-reference.com. The data looked something like this:

@@ -76,7 +76,7 @@ const posts = (await getCollection('blog')).sort(
 						posts.map((post) => (
 							<li>
 								<a href={`/blog/${post.slug}/`} class="glass-card article-card">
-									{post.data.thumbnail && <img class="article-thumbnail" src={post.data.thumbnail} alt={post.data.thumbnailAlt ?? ''} width="480" height="270" loading="lazy" />}
+									{post.data.thumbnail && <img class="article-thumbnail" src={post.data.thumbnail} alt={post.data.thumbnailAlt ?? ''} width={post.data.thumbnailWidth} height={post.data.thumbnailHeight} loading="lazy" />}
 									<div class="article-copy">
 									<span class="date">{post.data.pubDate.toLocaleDateString()}</span>
 									<h3>{post.data.title}</h3>
@@ -169,6 +169,10 @@ const posts = (await getCollection('blog')).sort(
 	}
 	.project-thumbnail {
 		margin-bottom: 1.25em;
+	}
+	.article-thumbnail {
+		aspect-ratio: auto;
+		background: transparent;
 	}
 	ul.post-list li a.article-card {
 		display: grid;

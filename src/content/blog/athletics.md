@@ -4,6 +4,8 @@ description: "An analysis of the attendance issues of the Oakland A's, and wheth
 pubDate: 'May 30 2025'
 thumbnail: "/assets/images/thumbnails/athletics.webp"
 thumbnailAlt: "Oakland Athletics attendance compared with the MLB average"
+thumbnailWidth: 800
+thumbnailHeight: 339
 ---
 
 The Oakland Athletics' departure from the Bay Area has been attributed to low attendance. But was it really that simple? This analysis examines decades of attendance data and team performance to see how the A's compared to the rest of Major League Baseball.

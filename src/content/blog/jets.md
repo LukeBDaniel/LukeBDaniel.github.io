@@ -4,6 +4,8 @@ description: "A visual analysis of Garrett Wilson and Sauce Gardner's contracts 
 pubDate: 'Jul 25 2025'
 thumbnail: "/assets/images/thumbnails/jets.webp"
 thumbnailAlt: "Projected New York Jets salary cap spending"
+thumbnailWidth: 609
+thumbnailHeight: 317
 ---
 
 The New York Jets have officially locked in two of their brightest young stars, wide receiver Garrett Wilson and cornerback Sauce Gardner, with massive new contract extensions. As the team looks to solidify a competitive core around a reloaded roster, these deals mark a turning point in the Jets’ long-term cap strategy. The visualizations below explore how Wilson and Gardner’s cap hits stack up against the league’s top earners and what it means for the Jets' salary cap outlook through 2030.

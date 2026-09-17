@@ -4,6 +4,8 @@ description: "Analyzing the Weighted Approximate Value (wAV) per Year of drafted
 pubDate: 'Nov 09 2025'
 thumbnail: "/assets/images/thumbnails/qb_drafts.webp"
 thumbnailAlt: "Quarterback career production by draft pick, comparing the Jets with the NFL"
+thumbnailWidth: 715
+thumbnailHeight: 493
 ---
 
 Drafting a franchise quarterback is the hardest challenge in the NFL. Some teams seem to have a knack for it, while others struggle for decades to find a long-term starter. To quantify draft success, I analyzed Pro Football Reference data from 1970 to 2024, calculating the Weighted Approximate Value per Year (wAV/Yr) for every drafted quarterback.

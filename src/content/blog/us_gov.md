@@ -4,6 +4,8 @@ description: "How proportional representation would reshape the US House of Repr
 pubDate: 'Oct 14 2025'
 thumbnail: "/assets/images/thumbnails/us_gov.webp"
 thumbnailAlt: "Map of changes in House representation under the Wyoming Rule"
+thumbnailWidth: 800
+thumbnailHeight: 484
 ---
 
 The United States House of Representatives was originally designed to grow alongside the country's population, ensuring proportional representation for all citizens. However, the Reapportionment Act of 1929 capped the total number of representatives at 435. As a result, the population variance between districts has grown massive, with citizens in smaller states often holding disproportionately more voting power per capita than those in larger states.
