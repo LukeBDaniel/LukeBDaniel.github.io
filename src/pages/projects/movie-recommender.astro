@@ -1,0 +1,110 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Movie Recommendation Application | ${SITE_TITLE}`} description="A computer science capstone combining a natural-language interface, the OpenAI API, and PostgreSQL for movie preferences and recommendation retrieval." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="project-header">
+				<p class="project-context">Computer Science Capstone · August - December 2024</p>
+				<h1>Movie Recommendation Application</h1>
+				<p class="subtitle">Connecting conversation to data: a full-stack application for managing movie preferences and retrieving recommendations through natural language.</p>
+				<p class="project-context">Advanced Data Management Technologies Laboratory · University of Pittsburgh</p>
+				<ul class="technologies" aria-label="Technologies used">
+					<li>Python</li>
+					<li>Streamlit</li>
+					<li>OpenAI API</li>
+					<li>PostgreSQL</li>
+					<li>SQL</li>
+				</ul>
+			</div>
+
+			<section class="prose glass-card">
+				<h2>About the Project</h2>
+				<p>Movie preferences are easy to describe in conversation, but an application needs structured information to store and use them. This project explored how a natural-language interface could bridge that gap, letting users share their tastes while the application handled the database interactions behind the scenes.</p>
+				<p>As part of my computer science capstone in the ADMT Laboratory, I developed a full-stack application supporting a movie recommendation system. It integrated the OpenAI API with PostgreSQL to manage user profiles and preferences, translate requests into SQL, and turn database query results into conversational responses.</p>
+			</section>
+
+			<section class="prose glass-card">
+				<h2>My Contribution</h2>
+				<p>My work focused on the user-facing application and the connections between the interface, language model, and database. I built the conversation flow, implemented profile and preference storage, and developed the pipeline for preference updates and recommendation retrieval.</p>
+				<p>The interface collected information such as a user's name, preferred genres, and movie ratings. Language-model integration allowed users to answer naturally instead of following a rigid input format. The application extracted relevant information from their responses and asked again when an answer did not address the question.</p>
+				<p>PostgreSQL preserved profile information and preferences for returning users, giving the application continuity across interactions.</p>
+			</section>
+
+			<section class="prose glass-card">
+				<h2>How It Works</h2>
+				<ol class="pipeline">
+					<li><strong>Start with a conversation.</strong> The user provides profile information, shares movie preferences, or requests recommendations through the natural-language interface.</li>
+					<li><strong>Translate the request.</strong> Python application logic and the OpenAI API interpret the input and translate the relevant request into SQL.</li>
+					<li><strong>Work with stored data.</strong> PostgreSQL stores or retrieves profile and preference information, supporting preference updates and recommendation retrieval.</li>
+					<li><strong>Respond in natural language.</strong> Database query results are translated into a readable response and returned through the interface.</li>
+				</ol>
+			</section>
+
+			<section class="prose glass-card">
+				<h2>Design Decisions & Takeaways</h2>
+				<p>I initially adapted an existing research chatbot, then reorganized the application around the more involved conversation flow this project required. Moving the interface to Streamlit brought it into the same Python environment as the application logic and simplified the back-and-forth between user input, API calls, and database operations.</p>
+				<p>The project strengthened my experience with API integration, SQL, and frontend development. Its central lesson was how to connect flexible conversational input with structured, persistent data—a pattern that extends beyond movie recommendations to other applications that collect and retrieve user information.</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.project-header {
+		margin-bottom: 2em;
+	}
+	.subtitle {
+		font-size: 1.25em;
+		color: var(--text-muted);
+	}
+	.project-context {
+		color: var(--text-muted);
+	}
+	.technologies {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em;
+		list-style: none;
+		padding: 0;
+		margin: 1.5em 0 0;
+	}
+	.technologies li {
+		padding: 0.3em 0.75em;
+		border: 1px solid var(--border-color);
+		border-radius: 6px;
+		color: var(--accent);
+	}
+	section {
+		margin-bottom: 1.5em;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.pipeline {
+		padding-left: 1.5em;
+		margin-bottom: 0;
+		color: var(--text-muted);
+	}
+	.pipeline li + li {
+		margin-top: 1em;
+	}
+	.pipeline strong {
+		color: var(--text-main);
+	}
+	@media (max-width: 720px) {
+		.glass-card {
+			padding: 1.5em;
+		}
+	}
+</style>
