@@ -15,7 +15,7 @@ import { SITE_TITLE } from '../../consts';
 		<main>
 			<div class="project-header">
 				<h1>NY Sports Attendance Predictor</h1>
-				<p class="subtitle">An interactive Machine Learning tool predicting home game attendance based on weather, form, and rivalries.</p>
+				<p class="subtitle">An interactive tool estimating home game attendance from historical game data, weather, form, and rivalries.</p>
 			</div>
 
 			<div class="iframe-container glass-card">
@@ -30,8 +30,10 @@ import { SITE_TITLE } from '../../consts';
 			<div class="prose glass-card mt-4">
 				<h3>About this Project</h3>
 				<p>This tool predicts home game attendance for 8 NY-area professional sports teams using machine learning. It pulls game results and attendance from the ESPN API, Baseball Reference, and American Soccer Analysis, matching historical weather to each venue via Open-Meteo.</p>
-				<p>The core model is a Gradient Boosting Regressor trained on normalized fill rates, with COVID-era seasons excluded. It features leave-one-out feature contributions to explain which factors drive each prediction above or below the historical average.</p>
-				<p>I built this entire project—from the data pipelines and machine learning model to the interactive Streamlit deployment—in just a few hours by effectively leveraging Claude Code.</p>
+				<p>The core model is a Gradient Boosting Regressor trained on normalized fill rates, with COVID-era seasons excluded. It displays leave-one-out feature contributions to show how individual inputs affect the model’s estimate relative to the historical average. These describe model behavior rather than causal effects on attendance.</p>
+				<p>I built the initial prototype in a few hours with Claude Code, connecting data pipelines, a machine learning model, and an interactive Streamlit application. A central goal was to demonstrate how quickly I could use AI coding tools to turn an idea into a working application.</p>
+				<h3>Interpreting the Predictions</h3>
+				<p>These estimates are exploratory. This page does not report held-out prediction errors or a comparison with a simple baseline, so it does not establish that the model outperforms historical team averages. A time-based evaluation against that baseline would be needed to assess its forecasting value.</p>
                 <div style="margin-top: 1.5em; display: flex; gap: 1em; flex-wrap: wrap;">
                     <a href="https://lbd-sports-attendance.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn glass-card">Open Full Page</a>
                     <a href="https://github.com/LukeBDaniel/sports-attendance" target="_blank" rel="noopener noreferrer" class="btn glass-card">View on GitHub</a>

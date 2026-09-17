@@ -1,6 +1,6 @@
 ---
-title: "Why The A's Left Oakland"
-description: "An analysis of the attendance issues of the Oakland A's, and whether Oakland is capable of hosting a Major League team."
+title: "Oakland A's Attendance in Context"
+description: "Comparing Oakland A's attendance with team performance and league trends, and examining what those patterns can tell us."
 pubDate: 'May 30 2025'
 thumbnail: "/assets/images/thumbnails/athletics.webp"
 thumbnailAlt: "Oakland Athletics attendance compared with the MLB average"
@@ -111,7 +111,7 @@ To understand Oakland's attendance in context, we need to compare it to the rest
 
 
 
-Even when accounting for league-wide trends, Oakland's attendance consistently ranked among the worst in baseball. Despite competitive seasons, the A's rarely climbed above the bottom tier.
+The league-wide comparisons show that Oakland's attendance was often near the bottom of MLB, including in competitive seasons. This is a descriptive comparison, not an estimate that controls for other influences on attendance.
 
 
 
@@ -135,7 +135,7 @@ Even when accounting for league-wide trends, Oakland's attendance consistently r
 
 
 
-The most telling finding: when plotting attendance against wins, Oakland consistently falls below the trend line. Even during 90+ win seasons, attendance lagged behind teams with similar records.
+The attendance-versus-wins plot shows Oakland below the trend line in many seasons, including seasons with more than 90 wins. Teams with similar win totals can have very different attendance, suggesting that on-field performance alone does not capture the full picture.
 
 
 
@@ -154,7 +154,9 @@ The most telling finding: when plotting attendance against wins, Oakland consist
     
 
 
-The numbers are clear: even during successful seasons, Oakland's attendance ranked among the worst in baseball. When compared to teams with similar win totals, the A's consistently underperformed. The attendance problem wasn't just about losing — it was a deeper issue with the market's support for the team.
+These comparisons show that low attendance persisted in some successful Oakland seasons. They do not establish why fans attended fewer games or whether the market could support a team under different conditions.
+
+Ownership decisions, ticket prices, stadium conditions, and uncertainty surrounding relocation are possible influences that this analysis does not isolate. Attendance records and win totals alone cannot separate those explanations or establish the causes of the move. The narrower conclusion is that winning and attendance did not move together consistently; explaining that gap requires additional data.
 
 *All data sourced from Baseball-Reference.com via pybaseball*
 

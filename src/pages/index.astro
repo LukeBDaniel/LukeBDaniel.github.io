@@ -26,11 +26,21 @@ const posts = (await getCollection('blog')).sort(
 				<div class="hero-text">
 					<h1>Luke Daniel</h1>
 					<p class="subtitle">
-						Software engineer and graduate student working across data science, applied AI, and sports analytics.
+						Software engineer and graduate student in business analytics, AI, and sports technology.
 					</p>
 					<a href="/about" class="about-link">More about me &rarr;</a>
 				</div>
 			</div>
+
+			<section class="section" aria-labelledby="professional-work">
+				<h2 id="professional-work">Professional Work</h2>
+				<div class="glass-card professional-card">
+					<span class="project-date">Software Engineer · August 2025 - Present</span>
+					<h3>VectorScribe</h3>
+					<p>Python control software for laser holographic microprinting.</p>
+					<p class="work-placeholder">Project overview coming soon.</p>
+				</div>
+			</section>
 
 			<section class="section">
 				<h2>Academic Projects</h2>
@@ -53,17 +63,17 @@ const posts = (await getCollection('blog')).sort(
 			<section class="section">
 				<h2>Personal Projects</h2>
 				<div class="projects-grid">
-					<a href="/projects/sports-attendance" class="glass-card project-card">
-						<h3>NY Sports Attendance Predictor</h3>
-						<p>An interactive Machine Learning tool predicting home game attendance for major NY-area sports teams based on weather, form, and rivalries.</p>
-					</a>
 					<a href="/projects/amc-guide" class="glass-card project-card">
 						<h3>AMC Guide</h3>
-						<p>A web application with a custom scraper and React frontend for filtering and organizing AMC movie showtimes.</p>
+						<p>Compare AMC showtimes across theaters, filter by format and seating options, and pin screenings in a timeline view.</p>
+					</a>
+					<a href="/projects/sports-attendance" class="glass-card project-card">
+						<h3>NY Sports Attendance Predictor</h3>
+						<p>Explore attendance estimates for eight NY-area sports teams using historical game data, weather, and a gradient boosting model.</p>
 					</a>
 					<a href="/projects/nfl-uniforms" class="glass-card project-card">
 						<h3>NFL Uniform Mixer</h3>
-						<p>An interactive static web app to visualize and customize matchups between NFL teams.</p>
+						<p>Mix helmets, jerseys, pants, and socks for NFL matchups, then export your combinations as a PNG.</p>
 					</a>
 					<!-- Add more projects here in the future -->
 				</div>
@@ -148,6 +158,16 @@ const posts = (await getCollection('blog')).sort(
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
 		gap: 2em;
 		margin-top: 1.5em;
+	}
+	.professional-card p {
+		color: var(--text-muted);
+	}
+	.professional-card .work-placeholder {
+		font-size: 0.9rem;
+		margin-bottom: 0;
+	}
+	.professional-card .project-date {
+		display: block;
 	}
 	.project-card {
 		display: flex;
