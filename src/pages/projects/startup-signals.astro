@@ -1,0 +1,104 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+import '../../styles/academic-project.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`NJ Startup Signals | ${SITE_TITLE}`} description="Second-place Stevens Business + AI Hackathon project mapping New Jersey startups using public funding, research, and patent signals. My work covered the backend, data pipelines, Supabase database, and API integrations." />
+	</head>
+	<body>
+		<Header />
+		<main class="academic-project">
+			<div class="project-header">
+				<p class="project-context">Stevens Business + AI Hackathon · 2nd Place · September 2026</p>
+				<h1>NJ Startup Signals</h1>
+				<p class="subtitle">An interactive platform for exploring New Jersey startups through public evidence of funding, research activity, and patents.</p>
+				<p class="project-context">Team project for the 1435 Capital challenge</p>
+				<ul class="technologies" aria-label="Technologies used">
+					<li>TypeScript</li>
+					<li>Next.js API</li>
+					<li>Supabase</li>
+					<li>PostgreSQL</li>
+					<li>React</li>
+					<li>Mapbox</li>
+				</ul>
+			</div>
+
+			<div class="iframe-container glass-card">
+				<iframe src="https://startup-signals.vercel.app/" title="NJ Startup Signals application" loading="lazy"></iframe>
+			</div>
+			<div class="project-links">
+				<a href="https://startup-signals.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Open the App &rarr;</a>
+				<a href="https://github.com/PhilPNG/StartupSignals" target="_blank" rel="noopener noreferrer" class="project-link">View Team Repository &rarr;</a>
+			</div>
+
+			<section class="prose glass-card">
+				<h2>Project Overview</h2>
+				<p>We built NJ Startup Signals during the Stevens Business + AI Hackathon for the 1435 Capital challenge, placing second. The app brings public signals about New Jersey companies into a map, ranked list, and sector view. Visitors can filter companies, adjust the weight of different signals, and open a company profile to inspect the underlying records and source links.</p>
+				<p>This was a three-person team project. One teammate built the frontend, another handled the AI integration, and I built the backend and data foundation that supply the app.</p>
+			</section>
+
+			<section class="prose glass-card">
+				<h2>My Contributions</h2>
+				<ul class="contributions">
+					<li><strong>Built the data pipelines.</strong> I found and connected public data sources, including SEC Form D filings, research grant records, and patent records. I implemented the ingestion and processing steps that turn those different sources into company and signal data for the app.</li>
+					<li><strong>Set up the database.</strong> I configured the Supabase database and the data model for companies, source records, and published signals, so the app could serve traceable results rather than a static demo list.</li>
+					<li><strong>Connected the APIs.</strong> I built the Next.js backend endpoints that return ranked companies, company details, sector information, and data-source status. The frontend uses those endpoints to update results when visitors change filters and signal weights.</li>
+				</ul>
+			</section>
+
+			<section class="prose glass-card">
+				<h2>How It Works</h2>
+				<ol class="pipeline">
+					<li><strong>Collect public records.</strong> The backend pipeline imports available funding, grant, and patent data from external sources.</li>
+					<li><strong>Link records to companies.</strong> Source records are processed and stored in Supabase with their provenance, then organized into signals for each company.</li>
+					<li><strong>Serve interactive results.</strong> The API scores and ranks companies using the visitor’s selected signal weights. The frontend presents the results on a map, in a list, and by sector.</li>
+				</ol>
+				<p>Source coverage varies by company. The app separates live results from clearly labeled sample data, and its AI-generated summaries are a separate part of the team’s work.</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.iframe-container {
+		width: 100%;
+		height: 75vh;
+		min-height: 620px;
+		padding: 0;
+		overflow: hidden;
+	}
+	iframe {
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+	.project-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75em;
+		margin-bottom: 2em;
+	}
+	.project-links .project-link {
+		margin-top: 0;
+	}
+	.contributions {
+		padding-left: 1.5em;
+		margin-bottom: 0;
+	}
+	.contributions li + li {
+		margin-top: 1em;
+	}
+	@media (max-width: 720px) {
+		.iframe-container {
+			height: 70vh;
+			min-height: 500px;
+		}
+	}
+</style>
