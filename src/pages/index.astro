@@ -51,6 +51,7 @@ const posts = (await getCollection('blog')).sort(
 				<h2 id="hackathon-projects">Hackathon Projects</h2>
 				<div class="projects-grid">
 					<a href="/projects/startup-signals" class="glass-card project-card">
+						<img class="project-thumbnail startup-thumbnail" src="/assets/images/projects/startup-signals-interface.png" alt="NJ Startup Signals interface showing a New Jersey startup map and signal-weight controls" width="2814" height="1318" loading="lazy" />
 						<span class="project-date">Stevens Business + AI Hackathon · September 2026</span>
 						<h3>NJ Startup Signals - 2nd Place</h3>
 						<p>A team-built platform for discovering New Jersey startups through public funding, research, and patent signals. I built the backend, data pipelines, database, and API integrations.</p>
@@ -257,6 +258,12 @@ const posts = (await getCollection('blog')).sort(
 	}
 	.project-thumbnail {
 		margin-bottom: 1.25em;
+	}
+	.startup-thumbnail {
+		height: 240px;
+		aspect-ratio: auto;
+		object-fit: cover;
+		object-position: center top;
 	}
 	.article-thumbnail {
 		aspect-ratio: 16 / 9;
