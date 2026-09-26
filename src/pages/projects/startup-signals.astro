@@ -4,6 +4,21 @@ import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import { SITE_TITLE } from '../../consts';
 import '../../styles/academic-project.css';
+
+const slideTitles = [
+	'NJ Startup Signals',
+	'Promising startups are hard to spot early',
+	'A map of startups and a ranked view of momentum',
+	'Discover earlier, evaluate faster',
+	'Built for those who spot and support growth',
+	'The signals behind the score',
+	'Explore the ecosystem',
+	'A closer look at each company',
+	'How the Startup Score is built',
+	'Rank opportunities through your lens',
+	'Momentum across industries',
+	'See the opportunity early',
+];
 ---
 
 <!doctype html>
@@ -33,12 +48,39 @@ import '../../styles/academic-project.css';
 				<a href="https://startup-signals.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Open the App &rarr;</a>
 				<a href="https://github.com/PhilPNG/StartupSignals" target="_blank" rel="noopener noreferrer" class="project-link">View Repository &rarr;</a>
 				<a href="https://github.com/PhilPNG/StartupSignals/blob/main/ChallengeStatement.md" target="_blank" rel="noopener noreferrer" class="project-link">Read Challenge Statement &rarr;</a>
-				<a href="/assets/presentations/nj-startup-signals-pitch.pptx" download class="project-link">Download Pitch Slides (.pptx) &rarr;</a>
 			</div>
 
 			<section class="prose glass-card">
 				<h2>Project Overview</h2>
 				<p>We built NJ Startup Signals during the Stevens Business + AI Hackathon for the 1435 Capital challenge, ultimately placing second. The app brings public signals about New Jersey companies into a map, ranked list, and sector view. Visitors can filter companies, adjust the weight of different signals, and open a company profile to inspect the underlying records and source links.</p>
+			</section>
+
+			<section class="slides-section" aria-labelledby="pitch-slides-heading">
+				<h2 id="pitch-slides-heading">Hackathon Pitch</h2>
+				<div class="slide-viewer glass-card" id="startup-slideshow" tabindex="0" aria-label="NJ Startup Signals pitch slideshow">
+					<div class="slide-frame">
+						{slideTitles.map((title, index) => (
+							<img
+								class="slide-image"
+								src={`/assets/presentations/startup-signals-slides/slide-${String(index + 1).padStart(2, '0')}.webp`}
+								alt={`Slide ${index + 1}: ${title}`}
+								width="1536"
+								height="864"
+								loading={index === 0 ? 'eager' : 'lazy'}
+								hidden={index !== 0}
+							/>
+						))}
+					</div>
+					<div class="slide-controls">
+						<button type="button" id="previous-slide" disabled>Previous</button>
+						<span id="slide-count" aria-live="polite">1 / {slideTitles.length}</span>
+						<button type="button" id="next-slide">Next</button>
+					</div>
+				</div>
+				<div class="slide-links">
+					<a href="/assets/presentations/nj-startup-signals-pitch.pdf" target="_blank" rel="noopener noreferrer" class="project-link">Open Full PDF &rarr;</a>
+					<a href="/assets/presentations/nj-startup-signals-pitch.pptx" download class="project-link">Download PowerPoint (.pptx) &rarr;</a>
+				</div>
 			</section>
 
 			<section class="prose glass-card">
@@ -87,6 +129,55 @@ import '../../styles/academic-project.css';
 	.project-links .project-link {
 		margin-top: 0;
 	}
+	.slides-section {
+		margin-bottom: 2em;
+	}
+	.slide-viewer {
+		padding: 1em;
+	}
+	.slide-frame {
+		aspect-ratio: 16 / 9;
+		background: #fff;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	.slide-image {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	.slide-image[hidden] {
+		display: none;
+	}
+	.slide-controls {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.slide-controls button {
+		padding: 0.5em 1em;
+		border: 1px solid var(--border-color);
+		border-radius: 6px;
+		background: var(--bg-card);
+		color: var(--text-main);
+		font: inherit;
+		cursor: pointer;
+	}
+	.slide-controls button:hover:not(:disabled) {
+		background: var(--bg-card-hover);
+	}
+	.slide-controls button:disabled {
+		opacity: 0.45;
+		cursor: default;
+	}
+	.slide-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75em;
+	}
 	.contributions {
 		padding-left: 1.5em;
 		margin-bottom: 0;
@@ -101,3 +192,29 @@ import '../../styles/academic-project.css';
 		}
 	}
 </style>
+
+<script>
+	const viewer = document.querySelector('#startup-slideshow');
+	if (viewer) {
+		const slides = Array.from(viewer.querySelectorAll<HTMLImageElement>('.slide-image'));
+		const previous = viewer.querySelector<HTMLButtonElement>('#previous-slide');
+		const next = viewer.querySelector<HTMLButtonElement>('#next-slide');
+		const count = viewer.querySelector<HTMLElement>('#slide-count');
+		let current = 0;
+
+		function showSlide(index: number) {
+			current = Math.max(0, Math.min(index, slides.length - 1));
+			slides.forEach((slide, slideIndex) => { slide.hidden = slideIndex !== current; });
+			if (previous) previous.disabled = current === 0;
+			if (next) next.disabled = current === slides.length - 1;
+			if (count) count.textContent = `${current + 1} / ${slides.length}`;
+		}
+
+		previous?.addEventListener('click', () => showSlide(current - 1));
+		next?.addEventListener('click', () => showSlide(current + 1));
+		viewer.addEventListener('keydown', (event) => {
+			if (event.key === 'ArrowLeft') { event.preventDefault(); showSlide(current - 1); }
+			if (event.key === 'ArrowRight') { event.preventDefault(); showSlide(current + 1); }
+		});
+	}
+</script>
