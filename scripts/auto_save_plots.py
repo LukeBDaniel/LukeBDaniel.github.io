@@ -107,9 +107,9 @@ def inject_savefig_and_image(source_lines, notebook_base, cell_index, existing_n
     existing_names.add(image_filename)
     
     # Create the path relative to notebook location
-    # Notebooks are in subdirectories like "notebooks/2025-07-25 Jets/"
-    # Images should go to "../assets/images/{base}/"
-    image_path = f"../assets/images/{notebook_base}/{image_filename}"
+    # Notebook execution starts in a dated folder under notebooks/.
+    # Save images in the site's public directory, not notebooks/assets/.
+    image_path = f"../../public/assets/images/{notebook_base}/{image_filename}"
     
     # Create savefig and Image lines
     savefig_line = f"plt.savefig('{image_path}', bbox_inches='tight')\n"
@@ -252,4 +252,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

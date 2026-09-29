@@ -8,7 +8,7 @@ import { SITE_TITLE } from '../../consts';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Fourth Down Calculator | ${SITE_TITLE}`} description="Explore real NFL fourth-down situations with a custom matchup-aware calculator built on nfl4th models." />
+		<BaseHead title={`Fourth Down Calculator | ${SITE_TITLE}`} description="Explore NFL fourth-down decisions with custom machine-learning models for regulation and overtime win probability." />
 	</head>
 	<body>
 		<Header />
@@ -30,7 +30,7 @@ import { SITE_TITLE } from '../../consts';
 			<div class="prose glass-card mt-4">
 				<h3>About this Project</h3>
 				<p>Fourth Down Calculator compares going for it, kicking a field goal, and punting by expected win probability. Users can build a hypothetical situation or select an NFL game and load a real fourth-down play, then compare the model’s recommendation with the team’s actual decision and the play’s outcome.</p>
-				<p>I extended the published nfl4th models with a custom adjustment layer that accounts for the matchup: offensive conversion ability, defensive resistance, kicker accuracy by distance, temperature, wind, drive-level performance, and kickoff return and coverage tendencies. A matchup panel shows the context behind the estimates alongside the game’s spread, total, and stadium conditions.</p>
+				<p>I trained custom win-probability models on historical NFL play-by-play: a regulation model using game situation and pregame market expectations, and a dedicated overtime model that accounts for possession order, earlier scoring, and overtime rules. Regulation estimates split the chance of reaching overtime equally between the teams. The calculator combines these predictions with nfl4th conversion, kicking, and punt outcome estimates, plus matchup, kicker, weather, and kickoff adjustments.</p>
 				<p>The React and TypeScript frontend runs calculations in a browser Web Worker. A Python data pipeline processes nflverse play-by-play into team and kicker ratings and a browsable archive of real game situations. The current archive covers games from the 2024–2026 seasons.</p>
 				<p>This is an ongoing personal project. I’m continuing to refine the model and its evaluation; historical plays are explored using the current ratings, rather than ratings reconstructed as of each game.</p>
                 <div style="margin-top: 1.5em; display: flex; gap: 1em; flex-wrap: wrap;">

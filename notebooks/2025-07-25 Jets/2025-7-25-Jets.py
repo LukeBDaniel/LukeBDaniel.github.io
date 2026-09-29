@@ -76,8 +76,8 @@ WR_plot.set_xlabel('')
 WR_plot.set_ylabel('Cap Hit (in millions of dollars)')
 #WR_plot.legend(labels = ['Garrett Wilson', 'Sauce Gardner', 'Other Players', 'Estimated Remaining'])
 
-plt.savefig('../assets/images/2025-7-25-Jets/wr_comparison.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-7-25-Jets/wr_comparison.png')
+plt.savefig('../../public/assets/images/2025-7-25-Jets/wr_comparison.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-7-25-Jets/wr_comparison.png')
 
 
 # Sauce Gardner, already a two-time All-Pro by age 24, secured a deal that rivals the biggest names at cornerback. The chart below compares his cap hits to other top CBs, including Patrick Surtain II and Jalen Ramsey.
@@ -109,8 +109,8 @@ CB_plot.set_xlabel('')
 CB_plot.set_ylabel('Cap Hit (in millions of dollars)')
 #WR_plot.legend(labels = ['Garrett Wilson', 'Sauce Gardner', 'Other Players', 'Estimated Remaining'])
 
-plt.savefig('../assets/images/2025-7-25-Jets/cb_comparison.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-7-25-Jets/cb_comparison.png')
+plt.savefig('../../public/assets/images/2025-7-25-Jets/cb_comparison.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-7-25-Jets/cb_comparison.png')
 
 
 # With both young stars locked in, the Jets’ cap structure reflects major investments in homegrown talent. This stacked bar chart shows how Wilson and Gardner’s contracts impact overall team spending over the next six seasons.
@@ -147,8 +147,8 @@ plot.set_xlabel('')
 plot.set_ylabel('Cap Spending (in millions of dollars)')
 plot.legend(labels = ['Garrett Wilson', 'Sauce Gardner', 'Other Players', 'Estimated Remaining'])
 
-plt.savefig('../assets/images/2025-7-25-Jets/jets_cap.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-7-25-Jets/jets_cap.png')
+plt.savefig('../../public/assets/images/2025-7-25-Jets/jets_cap.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-7-25-Jets/jets_cap.png')
 
 
 # With Wilson and Gardner now among the highest-paid players at their respective positions, the Jets are signaling a clear commitment to building around elite, homegrown talent. While these deals carry significant financial weight, they reflect the team's confidence in its young foundation and a willingness to compete at the highest level. The real challenge will be balancing star contracts with roster depth — but for now, New York has secured two cornerstones for the foreseeable future.

@@ -95,8 +95,8 @@ sns.barplot(data=OAK, x='Weekday', y='Attendance', estimator=np.mean, order=['Su
 plt.title('Average Attendance by Weekday')
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/weekday_attendance.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/weekday_attendance.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/weekday_attendance.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/weekday_attendance.png')
 
 
 # In[8]:
@@ -107,8 +107,8 @@ sns.boxplot(data=OAK, x='Opp', y='Attendance', order = OAK.groupby('Opp')['Atten
 plt.title('Attendance Distribution by Opponent')
 plt.xticks(rotation=90)
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/opponent_attendance.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/opponent_attendance.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/opponent_attendance.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/opponent_attendance.png')
 
 
 # In[9]:
@@ -119,8 +119,8 @@ plt.xlabel('Year')
 plt.ylabel('Average Attendance')
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/attendance_over_time.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/attendance_over_time.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/attendance_over_time.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/attendance_over_time.png')
 
 
 # To understand Oakland's attendance in context, we need to compare it to the rest of the league.
@@ -134,8 +134,8 @@ plt.xlabel('Year')
 plt.ylabel('Wins')
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/wins_over_time.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/wins_over_time.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/wins_over_time.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/wins_over_time.png')
 
 
 # In[11]:
@@ -148,8 +148,8 @@ ax1.plot(OAK.groupby('Year')['Attendance'].mean(), linewidth = 3)
 ax2.plot(OAK.groupby('Year')['SeasonWins'].mean(), linewidth = 3, color = 'red')
 
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/attendance_wins_overlay.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/attendance_wins_overlay.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/attendance_wins_overlay.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/attendance_wins_overlay.png')
 
 
 # 
@@ -214,8 +214,8 @@ sns.boxplot(data=all_teams, x='Tm', y='Attendance', order = all_teams.groupby('T
 plt.title('Attendance Distribution by Team')
 plt.xticks(rotation=90)
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/team_attendance_dist.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/team_attendance_dist.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/team_attendance_dist.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/team_attendance_dist.png')
 
 
 # In[ ]:
@@ -226,8 +226,8 @@ plt.xlabel('Year')
 plt.ylabel('Average Attendance')
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/league_attendance_over_time.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/league_attendance_over_time.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/league_attendance_over_time.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/league_attendance_over_time.png')
 
 
 # In[ ]:
@@ -292,8 +292,8 @@ plt.xlabel('Year')
 plt.ylabel('Average Attendance')
 plt.legend()
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/oak_vs_league_attendance.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/oak_vs_league_attendance.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/oak_vs_league_attendance.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/oak_vs_league_attendance.png')
 
 
 # In[ ]:
@@ -342,8 +342,8 @@ plt.xlabel('Year')
 plt.ylabel('Average Wins')
 plt.legend()
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/oak_vs_league_wins.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/oak_vs_league_wins.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/oak_vs_league_wins.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/oak_vs_league_wins.png')
 
 
 # The numbers are clear: even during successful seasons, Oakland's attendance ranked among the worst in baseball. When compared to teams with similar win totals, the A's consistently underperformed. The attendance problem wasn't just about losing — it was a deeper issue with the market's support for the team.
@@ -388,6 +388,6 @@ plt.ylabel('Average Attendance')
 plt.title('Attendance vs Season Wins')
 plt.legend()
 plt.tight_layout()
-plt.savefig('../assets/images/2025-5-30-Athletics/attendance_vs_wins.png', bbox_inches='tight')
-Image(filename='../assets/images/2025-5-30-Athletics/attendance_vs_wins.png')
+plt.savefig('../../public/assets/images/2025-5-30-Athletics/attendance_vs_wins.png', bbox_inches='tight')
+Image(filename='../../public/assets/images/2025-5-30-Athletics/attendance_vs_wins.png')
 

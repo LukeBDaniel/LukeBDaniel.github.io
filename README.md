@@ -6,6 +6,21 @@ Welcome to the repository for my personal portfolio website!
 
 This website is built to serve as a central hub for my projects, resume, and short data analysis posts.
 
+## Blog files
+
+The published write-ups live in `src/content/blog/`. Each Markdown file is an
+Astro content entry; its filename is the `/blog/<slug>/` URL. Edit these files
+to change what readers see. Post images are served from `public/assets/images/`;
+keep their existing paths when editing a post so published image URLs continue
+to work. The thumbnails in `public/assets/images/thumbnails/` are retained even
+though the current homepage lists posts as text links.
+
+`notebooks/` contains the research behind several posts. The `.ipynb` files,
+data, and source scripts are separate from the published articles. Notebook
+Markdown exports and their companion chart files are kept together in each
+research folder's `exports/` directory. They are archival outputs, not site
+content. See `notebooks/README.md` before regenerating an export.
+
 ## Fourth Down Calculator
 
 The project page at `/projects/fourth-down-calc/` embeds the static calculator

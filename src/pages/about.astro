@@ -35,7 +35,7 @@ import { SITE_TITLE } from '../consts';
 				My work sits at the intersection of software, data, and applied AI. At VectorScribe, I build full-stack Python control software for laser holographic microprinting, improving everything from image-processing and hardware-control routines to user interfaces and deployment. Whether I'm analyzing sports data, building AI-powered tools, or designing intuitive interfaces, I enjoy turning complex systems into useful, accessible experiences.
 			</p>
 			<p>
-				I’m pursuing opportunities in data analytics, with a particular interest in the sports industry.
+				I’m pursuing opportunities in data analytics and engineering, with a particular interest in the sports industry.
 			</p>
 		</div>
 	</div>
@@ -64,7 +64,7 @@ import { SITE_TITLE } from '../consts';
 			</div>
 			<div class="resume-subtitle-row">
 				<div class="resume-subtitle">
-					<strong>Master in Sports Technologies & Digital Transformation</strong>
+					<strong>Master of Science, Sports Technologies & Digital Transformation</strong>
 				</div>
 				<span class="resume-date">Expected June 2027</span>
 			</div>
@@ -86,42 +86,11 @@ import { SITE_TITLE } from '../consts';
 	</div>
 
 	<div class="resume-section">
-		<h2>Skills</h2>
-		<div class="resume-item glass-card skills-grid">
-			<div class="skill-category">
-				<strong>Programming</strong>
-				<ul>
-					<li>Python</li>
-					<li>SQL</li>
-					<li>Java</li>
-					<li>R</li>
-				</ul>
-			</div>
-			<div class="skill-category">
-				<strong>Data & Analytics</strong>
-				<ul>
-					<li>Microsoft Excel</li>
-					<li>Looker Studio</li>
-					<li>PostgreSQL</li>
-				</ul>
-			</div>
-			<div class="skill-category">
-				<strong>AI Tools</strong>
-				<ul>
-					<li>Claude Code</li>
-					<li>OpenAI Codex</li>
-					<li>Google Antigravity</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-
-	<div class="resume-section">
 		<h2>Experience</h2>
 		
-		<div class="resume-item glass-card">
+		<a class="resume-item glass-card resume-link" href="/projects/vectorscribe">
 			<div class="resume-header">
-				<h3><a href="/projects/vectorscribe">VectorScribe, LLC</a></h3>
+				<h3>VectorScribe, LLC</h3>
 				<span class="resume-location">Bethlehem, PA</span>
 			</div>
 			<div class="resume-subtitle-row">
@@ -136,7 +105,7 @@ import { SITE_TITLE } from '../consts';
 				<li>Designed and deployed a custom user interface for configuring print patterns and hardware parameters.</li>
 				<li>Established the company GitHub organization and lab deployment pipelines to streamline collaboration.</li>
 			</ul>
-		</div>
+		</a>
 
 		<div class="resume-item glass-card">
 			<div class="resume-header">
@@ -153,9 +122,26 @@ import { SITE_TITLE } from '../consts';
 	</div>
 
 	<div class="resume-section">
-		<h2>Academic Projects</h2>
+		<h2>Projects</h2>
 
-		<div class="resume-item glass-card">
+		<a class="resume-item glass-card resume-link" href="/projects/startup-signals">
+			<div class="resume-header">
+				<h3>NJ Startup Signals</h3>
+				<span class="resume-location">Hoboken, NJ</span>
+			</div>
+			<div class="resume-subtitle-row">
+				<div class="resume-subtitle">
+					<strong>Stevens Business + AI Hackathon | 2nd Place</strong>
+				</div>
+				<span class="resume-date">September 2026</span>
+			</div>
+			<ul class="resume-bullets">
+				<li>Built backend data infrastructure integrating government grant and patent data sources into a unified Supabase database.</li>
+				<li>Developed API and ingestion pipelines supporting local startup evaluation, sector rankings, and statewide ecosystem analysis.</li>
+			</ul>
+		</a>
+
+		<a class="resume-item glass-card resume-link" href="/projects/gasp-violations">
 			<div class="resume-header">
 				<h3>Air Quality Dashboard</h3>
 				<span class="resume-location">Pittsburgh, PA</span>
@@ -170,9 +156,9 @@ import { SITE_TITLE } from '../consts';
 				<li>Built a Looker Studio dashboard mapping steel facilities in Western Pennsylvania and visualizing air-quality violations and associated fines.</li>
 				<li>Collaborated with nonprofit stakeholders to gather requirements and refine dashboard content.</li>
 			</ul>
-		</div>
+		</a>
 
-		<div class="resume-item glass-card">
+		<a class="resume-item glass-card resume-link" href="/projects/movie-recommender">
 			<div class="resume-header">
 				<h3>Movie Recommendation Application</h3>
 				<span class="resume-location">Pittsburgh, PA</span>
@@ -187,6 +173,31 @@ import { SITE_TITLE } from '../consts';
 				<li>Developed a full-stack application supporting a movie recommendation system, integrating a natural-language interface, the OpenAI API, and PostgreSQL to manage user profiles and preferences.</li>
 				<li>Built a pipeline that translated user requests into SQL and database query results into natural-language responses, enabling preference updates and recommendation retrieval.</li>
 			</ul>
+		</a>
+	</div>
+
+	<div class="resume-section">
+		<h2>Skills</h2>
+		<div class="resume-item glass-card skills-grid">
+			<div class="skill-category">
+				<strong>Programming & Development</strong>
+				<ul>
+					<li>Python</li>
+					<li>SQL</li>
+					<li>R</li>
+					<li>Git</li>
+					<li>Java</li>
+				</ul>
+			</div>
+			<div class="skill-category">
+				<strong>Data Management & Analytics</strong>
+				<ul>
+					<li>Supabase</li>
+					<li>PostgreSQL</li>
+					<li>pandas</li>
+					<li>Looker Studio</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 		</main>
@@ -281,6 +292,20 @@ import { SITE_TITLE } from '../consts';
 		margin-bottom: 1.5em;
 		padding: 1.5em 2em;
 	}
+	.resume-link {
+		display: block;
+		color: inherit;
+	}
+	.resume-link:hover,
+	.resume-link:focus-visible {
+		color: inherit;
+		background: var(--bg-card-hover);
+		border-color: var(--accent);
+	}
+	.resume-link:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+	}
 	.resume-header {
 		display: flex;
 		justify-content: space-between;
@@ -293,6 +318,12 @@ import { SITE_TITLE } from '../consts';
 		margin: 0;
 		font-size: 1.3em;
 		color: var(--text-main);
+	}
+	.resume-header .linked-title {
+		color: var(--accent);
+	}
+	.resume-link:hover .linked-title {
+		color: var(--accent-hover);
 	}
 	.resume-location {
 		color: var(--text-main);

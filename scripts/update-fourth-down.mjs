@@ -14,7 +14,7 @@ execFileSync('npm', ['run', 'build'], {
   env: { ...process.env, BASE_PATH: '', STATIC_ASSET_PREFIX: '/fourth-down-calc' },
   stdio: 'inherit',
 });
-for (const name of ['index.html', 'models/manifest.json', 'data/games.json', 'data/fourth_downs_by_game.json', 'data/team_ratings.json', 'data/kicker_ratings.json', 'fourth-down-calc/_next']) {
+for (const name of ['index.html', 'models/manifest.json', 'models/custom-wp.json', 'data/games.json', 'data/fourth_downs_by_game.json', 'data/team_ratings.json', 'data/kicker_ratings.json', 'fourth-down-calc/_next']) {
   if (!existsSync(resolve(output, name))) throw new Error(`Missing calculator export: ${name}`);
 }
 rmSync(staging, { recursive: true, force: true });

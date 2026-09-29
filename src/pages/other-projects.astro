@@ -1,0 +1,118 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Other Personal Projects | ${SITE_TITLE}`} description="More personal projects and data analysis write-ups by Luke Daniel." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Other Personal Projects</h1>
+			<div class="projects-grid">
+				<a href="/projects/sports-attendance" class="glass-card project-card">
+					<h2>NY Sports Attendance Predictor</h2>
+					<p>Explore attendance estimates for eight NY-area sports teams using historical game data, weather, and a gradient boosting model.</p>
+				</a>
+				<a href="/projects/nfl-uniforms" class="glass-card project-card">
+					<h2>NFL Uniform Mixer</h2>
+					<p>Mix helmets, jerseys, pants, and socks for NFL matchups, then export your combinations as a PNG.</p>
+				</a>
+			</div>
+
+			<section class="writeups-section">
+				<h2>Short Data Analysis Write-Ups</h2>
+				<p>Short explorations of sports, public data, and visual analysis.</p>
+				<ul class="post-list">
+					{posts.map((post) => (
+						<li>
+							<a href={`/blog/${post.slug}/`} class="glass-card article-card">
+								{post.data.thumbnail && <img class="article-thumbnail" src={post.data.thumbnail} alt={post.data.thumbnailAlt ?? ''} width={post.data.thumbnailWidth} height={post.data.thumbnailHeight} loading="lazy" />}
+								<div class="article-copy">
+									<time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString()}</time>
+									<h3>{post.data.title}</h3>
+									<p>{post.data.description}</p>
+								</div>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+		gap: 2em;
+		margin-top: 1.5em;
+	}
+	.project-card {
+		display: block;
+	}
+	.project-card h2 {
+		font-size: 1.3em;
+		border: 0;
+		padding: 0;
+		margin-bottom: 0.5em;
+	}
+	.project-card p,
+	.writeups-section p {
+		color: var(--text-muted);
+		margin: 0;
+	}
+	.writeups-section {
+		margin-top: 3em;
+	}
+	.writeups-section p {
+		margin-bottom: 1.25em;
+	}
+	.article-card {
+		display: grid;
+		grid-template-columns: minmax(0, 140px) minmax(0, 1fr);
+		align-items: center;
+		gap: 1.5em;
+	}
+	.article-thumbnail {
+		display: block;
+		width: 140px;
+		height: 90px;
+		object-fit: contain;
+		background: transparent;
+		border-radius: 8px;
+	}
+	.article-copy time {
+		display: block;
+		color: var(--text-muted);
+		font-size: 0.9em;
+		margin-bottom: 0.25em;
+	}
+	.article-copy h3 {
+		margin-bottom: 0.4em;
+		font-weight: 500;
+		font-size: 1.2rem;
+	}
+	@media (max-width: 720px) {
+		.article-card {
+			grid-template-columns: minmax(0, 100px) minmax(0, 1fr);
+			gap: 1em;
+		}
+		.article-thumbnail {
+			width: 100px;
+			height: 65px;
+		}
+	}
+</style>
