@@ -1,0 +1,51 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+import '../../styles/academic-project.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Logr | ${SITE_TITLE}`} description="Logr is my work-in-progress native iOS reading journal, built with SwiftUI, FastAPI, PostgreSQL, and Supabase." />
+	</head>
+	<body>
+		<Header />
+		<main class="professional-project logr-project">
+			<div class="project-header">
+				<p class="project-context">August 2025 - Present</p>
+				<div class="company-heading"><img src="/assets/images/projects/logr-icon.webp" alt="Logr app icon" width="96" height="96" /><h1>Logr - Book Tracking App</h1></div>
+				<p class="subtitle">A reading journal for the books you finish, the ones you leave behind, and everything in between.</p>
+				<p class="project-context">Personal project</p>
+				<ul class="technologies" aria-label="Technologies used"><li>SwiftUI</li><li>SwiftData</li><li>FastAPI</li><li>PostgreSQL</li><li>Supabase</li></ul>
+			</div>
+
+			<section class="prose glass-card">
+				<h2>The project</h2>
+				<p>I'm building Logr as a native iOS app for keeping a personal reading history and discovering books through other readers. People can record reading sessions and progress, rate and review books, organize favorites and lists, and follow readers and authors. The project is still in development and is not yet a public release, although I plan to release it in the coming months.</p>
+			</section>
+
+			<section class="prose glass-card">
+				<h2>What I've built</h2>
+				<ul class="highlights">
+					<li><strong>A detailed book library.</strong> Work and edition views help readers choose the right version of a book, including language, format, page count, and cover. Information is sourced from multiple APIs and databases.</li>
+					<li><strong>Reading history that preserves context.</strong> Logs capture status, progress, ratings, and reviews. Lists, tags, favorites, and want-to-read shelves provide different ways to organize a library.</li>
+					<li><strong>An offline-capable iOS client.</strong> SwiftData stores account-specific library data on device. A durable queue saves edits locally and syncs them through the FastAPI backend when connectivity returns.</li>
+					<li><strong>A catalog and social backend.</strong> PostgreSQL stores library and profile data; catalog integrations bring in book and author metadata. The API serves search, profiles, and activity-related data while keeping server credentials off the phone.</li>
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.company-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin: 0.75rem 0 1rem; }
+	.company-heading img { width: 96px; height: 96px; border-radius: 25%; }
+	.company-heading h1 { margin: 0; }
+	.highlights { padding-left: 1.4rem; margin-bottom: 0; color: var(--text-muted); }
+	.highlights li + li { margin-top: 1rem; }
+	.highlights strong { color: var(--text-main); }
+</style>

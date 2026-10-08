@@ -29,11 +29,20 @@ const slideTitles = [
 	<body>
 		<Header />
 		<main class="academic-project">
+			<div class="hackathon-gallery" aria-label="Hackathon photos">
+				<figure class="project-figure">
+					<a href="/assets/images/projects/hackathon-group.webp" target="_blank" rel="noopener noreferrer" aria-label="View the hackathon group photo at full size"><img src="/assets/images/projects/hackathon-group.webp" alt="Hackathon participants and organizers at the Stevens award ceremony" width="2000" height="1333" loading="lazy" /></a>
+				</figure>
+				<figure class="project-figure">
+					<a href="/assets/images/projects/hackathon-table.webp" target="_blank" rel="noopener noreferrer" aria-label="View the hackathon work table photo at full size"><img src="/assets/images/projects/hackathon-table.webp" alt="Hackathon team members working together at a table with laptops" width="2000" height="1333" loading="lazy" /></a>
+				</figure>
+			</div>
+
 			<div class="project-header">
-				<p class="project-context">Stevens Business + AI Hackathon · September 2026 · 2nd Place</p>
+				<p class="project-context">September 2026</p>
 				<h1>NJ Startup Signals</h1>
-				<p class="subtitle">An interactive platform for exploring New Jersey startups through public evidence of funding, research activity, and patents.</p>
-				<p class="project-context">Team project for the 1435 Capital challenge</p>
+				<p class="subtitle">An interactive platform for exploring New Jersey startups through public evidence of funding, research activity, and patents. Second-place finisher at the Stevens Business + AI Hackathon.</p>
+				<p class="project-context">Stevens Institute of Technology  |  1435 Capital Management  |  Business + AI Hackathon  |  2nd Place</p>
 				<ul class="technologies" aria-label="Technologies used">
 					<li>TypeScript</li>
 					<li>Supabase</li>
@@ -103,6 +112,24 @@ const slideTitles = [
 </html>
 
 <style>
+	.hackathon-gallery {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	.hackathon-gallery .project-figure {
+		margin: 0;
+	}
+	.hackathon-gallery img {
+		aspect-ratio: 3 / 2;
+		object-fit: cover;
+	}
+	@media (max-width: 720px) {
+		.hackathon-gallery {
+			grid-template-columns: 1fr;
+		}
+	}
 	.iframe-container {
 		width: 100%;
 		height: 75vh;

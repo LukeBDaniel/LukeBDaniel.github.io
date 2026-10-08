@@ -2,7 +2,61 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import HomeProjectCard from '../components/HomeProjectCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const experience = {
+	href: '/projects/vectorscribe', title: 'VectorScribe', size: 'full' as const,
+	context: 'Software Engineer', date: 'August 2025 - Present',
+	description: 'Building Python software for laser holographic microprinting.',
+	logo: { src: '/assets/images/projects/vectorscribe-logo.png', alt: 'VectorScribe logo', width: 556, height: 376 },
+	images: [
+		{ src: '/assets/images/thumbnails/vectorscribe-einstein.webp', alt: 'Colorful Einstein portrait printed on a VectorScribe optical sample', width: 720, height: 480 },
+		{ src: '/assets/images/projects/vectorscribe-hardware.webp', alt: 'VectorScribe optical microprinting hardware', width: 1600, height: 1100 },
+	],
+};
+
+const projects = [
+	{
+		href: '/projects/startup-signals', title: 'NJ Startup Signals', size: 'full' as const,
+		context: 'Stevens Institute of Technology | Business + AI Hackathon | 2nd Place', date: 'September 2026',
+		description: 'A team-built platform for discovering New Jersey startups through public funding, research, and patent signals. I built the backend, data pipelines, database, and API integrations.',
+		images: [
+			{ src: '/assets/images/projects/startup-signals-interface.png', alt: 'NJ Startup Signals interface showing a New Jersey startup map and signal-weight controls', width: 2814, height: 1318 },
+			{ src: '/assets/images/projects/hackathon-group.webp', alt: 'Hackathon participants and organizers at the Stevens award ceremony', width: 2000, height: 1333 },
+		],
+	},
+	{
+		href: '/projects/logr', title: 'Logr - Book Tracking App', size: 'full' as const,
+		context: 'Personal project', date: 'August 2025 - Present',
+		description: 'A native iOS reading journal for tracking books, editions, progress, and the people you read with. Built with SwiftUI, FastAPI, and PostgreSQL.',
+		logo: { src: '/assets/images/projects/logr-icon.webp', alt: 'Logr app icon', width: 320, height: 320 },
+	},
+	{
+		href: '/projects/movie-recommender', title: 'Movie Recommendation Application', size: 'half' as const,
+		context: 'University of Pittsburgh | ADMT Lab', date: 'August - December 2024',
+		description: 'A computer science capstone connecting a natural-language interface, the OpenAI API, and PostgreSQL to manage user profiles, update movie preferences, and retrieve recommendations.',
+		images: [{ src: '/assets/images/thumbnails/movie-architecture.webp', alt: 'Movie chatbot architecture connecting the frontend, Python API, language model, and database', width: 960, height: 540 }],
+	},
+	{
+		href: '/projects/gasp-violations', title: 'Air Quality Dashboard - Visualizing Industrial Impact in Allegheny County', size: 'half' as const,
+		context: 'University of Pittsburgh | GASP', date: 'January - April 2025',
+		description: 'A data analytics capstone project for GASP (Group Against Smog & Pollution) visualizing 5 years of air quality violations and fines from major industrial polluters.',
+		images: [{ src: '/assets/images/thumbnails/gasp-dashboard.webp', alt: 'GASP dashboard with a facility map and air-quality violation charts', width: 960, height: 540 }],
+	},
+	{
+		href: '/projects/fourth-down-calc', title: 'Fourth Down Calculator', size: 'half' as const,
+		context: 'Personal project', date: 'September 2026',
+		description: 'Explore real NFL fourth-down plays with custom machine-learning models for regulation and overtime win probability, plus team, kicker, and weather adjustments.',
+		images: [{ src: '/assets/images/thumbnails/fourth_down_calc.png', alt: 'Fourth Down Calculator interface showing an NFL game situation and decision recommendations', width: 2394, height: 1316 }],
+	},
+	{
+		href: '/projects/amc-guide', title: 'AMC Guide', size: 'half' as const,
+		context: 'Personal project', date: 'June 2026',
+		description: 'Compare AMC showtimes across local theaters, filter by format and seating options, and pin screenings in a timeline view.',
+		images: [{ src: '/assets/images/thumbnails/amc_guide.png', alt: 'AMC Guide interface showing movie showtimes and filtering controls', width: 2354, height: 1296 }],
+	},
+];
 ---
 
 <!doctype html>
@@ -29,54 +83,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			<section class="section" aria-labelledby="professional-experience">
 				<h2 id="professional-experience">Experience</h2>
-				<a href="/projects/vectorscribe" class="glass-card professional-card">
-					<div class="professional-images"><img src="/assets/images/thumbnails/vectorscribe-einstein.webp" alt="Colorful Einstein portrait printed on a VectorScribe optical sample" width="720" height="480" loading="lazy" /><img src="/assets/images/projects/vectorscribe-hardware.webp" alt="VectorScribe optical microprinting hardware" width="1600" height="1100" loading="lazy" /></div>
-					<div class="professional-summary">
-						<img class="company-logo" src="/assets/images/projects/vectorscribe-logo.png" alt="VectorScribe logo" width="556" height="376" />
-						<div>
-					<span class="project-date">August 2025 - Present</span>
-					<span class="project-context">Software Engineer</span>
-					<h3>VectorScribe</h3>
-					<p>Building Python software for laser holographic microprinting.</p>
-						</div>
-					</div>
-				</a>
+				<HomeProjectCard {...experience} />
 			</section>
 
 			<section class="section" aria-labelledby="featured-projects">
 				<h2 id="featured-projects">Projects</h2>
 				<div class="projects-grid">
-					<a href="/projects/startup-signals" class="glass-card project-card featured-wide">
-						<img class="project-thumbnail startup-thumbnail" src="/assets/images/projects/startup-signals-interface.png" alt="NJ Startup Signals interface showing a New Jersey startup map and signal-weight controls" width="2814" height="1318" loading="lazy" />
-						<span class="project-date">September 2026</span>
-						<span class="project-context">Stevens Business + AI Hackathon · 2nd Place</span>
-						<h3>NJ Startup Signals</h3>
-						<p>A team-built platform for discovering New Jersey startups through public funding, research, and patent signals. I built the backend, data pipelines, database, and API integrations.</p>
-					</a>
-					<a href="/projects/movie-recommender" class="glass-card project-card">
-						<img class="project-thumbnail" src="/assets/images/thumbnails/movie-architecture.webp" alt="Movie chatbot architecture connecting the frontend, Python API, language model, and database" width="960" height="540" loading="lazy" />
-						<span class="project-date">August - December 2024</span>
-						<span class="project-context">Pitt ADMT Lab · Computer Science Capstone</span>
-						<h3>Movie Recommendation Application</h3>
-						<p>A computer science capstone connecting a natural-language interface, the OpenAI API, and PostgreSQL to manage user profiles, update movie preferences, and retrieve recommendations.</p>
-					</a>
-					<a href="/projects/gasp-violations" class="glass-card project-card">
-						<img class="project-thumbnail" src="/assets/images/thumbnails/gasp-dashboard.webp" alt="GASP dashboard with a facility map and air-quality violation charts" width="960" height="540" loading="lazy" />
-						<span class="project-date">January - April 2025</span>
-						<span class="project-context">Group Against Smog & Pollution (GASP) · Data Science Capstone</span>
-						<h3>Visualizing Industrial Impact in Allegheny County</h3>
-						<p>A data analytics capstone project for GASP (Group Against Smog & Pollution) visualizing 5 years of air quality violations and fines from major industrial polluters.</p>
-					</a>
-					<a href="/projects/fourth-down-calc" class="glass-card project-card">
-						<img class="project-thumbnail" src="/assets/images/thumbnails/fourth_down_calc.png" alt="Fourth Down Calculator interface showing an NFL game situation and decision recommendations" width="2394" height="1316" loading="lazy" />
-						<h3>Fourth Down Calculator</h3>
-						<p>Explore real NFL fourth-down plays with custom machine-learning models for regulation and overtime win probability, plus team, kicker, and weather adjustments.</p>
-					</a>
-					<a href="/projects/amc-guide" class="glass-card project-card">
-						<img class="project-thumbnail" src="/assets/images/thumbnails/amc_guide.png" alt="AMC Guide interface showing movie showtimes and filtering controls" width="2354" height="1296" loading="lazy" />
-						<h3>AMC Guide</h3>
-						<p>Compare AMC showtimes across local theaters, filter by format and seating options, and pin screenings in a timeline view.</p>
-					</a>
+					{projects.map((project) => <HomeProjectCard {...project} />)}
 				</div>
 			</section>
 
@@ -149,105 +162,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
 		gap: 2em;
 		margin-top: 1.5em;
-	}
-	.featured-wide {
-		grid-column: 1 / -1;
-	}
-	.professional-card {
-		display: grid;
-		grid-template-columns: 120px minmax(0, 1fr);
-		grid-template-columns: 1fr;
-		align-items: center;
-		gap: 1.5rem;
-	}
-	.company-logo {
-		width: 120px;
-		max-width: 100%;
-		height: auto;
-		border-radius: 8px;
-		flex-shrink: 0;
-	}
-	.professional-images {
-		display: flex;
-		gap: 0.75rem;
-	}
-	.professional-images img {
-		width: calc(50% - 0.375rem);
-		height: 240px;
-		object-fit: cover;
-		background: #fff;
-		border-radius: 8px;
-	}
-	.professional-copy {
-	}
-	.professional-summary {
-		display: flex;
-		align-items: center;
-		gap: 1.5rem;
-	}
-	@media (max-width: 540px) {
-		.professional-card {
-			grid-template-columns: 1fr;
-			align-items: flex-start;
-		}
-		.company-logo {
-			width: 96px;
-		}
-		.professional-images {
-			width: 100%;
-		}
-	}
-	.professional-card p {
-		color: var(--text-muted);
-	}
-	.professional-card .work-link {
-		font-weight: 600;
-	}
-	.professional-card .project-date {
-		display: block;
-	}
-	.project-card {
-		display: flex;
-		flex-direction: column;
-	}
-	.project-date {
-		color: var(--text-muted);
-		font-size: 0.9em;
-		margin-bottom: 0.5em;
-	}
-	.project-card .project-date {
-		display: block;
-		line-height: 1.4;
-		margin-bottom: 0;
-	}
-	.project-card .project-context {
-		display: block;
-		color: var(--text-muted);
-		font-size: 0.9em;
-		line-height: 1.4;
-		margin: 0.2em 0 0.85em;
-	}
-	.project-thumbnail {
-		display: block;
-		width: 100%;
-		height: auto;
-		aspect-ratio: 16 / 9;
-		object-fit: contain;
-		background: #fff;
-		border-radius: 8px;
-	}
-	.project-thumbnail {
-		margin-bottom: 1.25em;
-	}
-	.startup-thumbnail {
-		height: 240px;
-		aspect-ratio: auto;
-		object-fit: cover;
-		object-position: center top;
-	}
-	.project-card p {
-		margin: 0;
-		color: var(--text-muted);
-		font-size: 1.05em;
 	}
 </style>

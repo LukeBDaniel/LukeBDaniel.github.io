@@ -1,0 +1,61 @@
+---
+interface Image {
+	src: string;
+	alt: string;
+	width: number;
+	height: number;
+}
+
+interface Props {
+	href: string;
+	title: string;
+	description: string;
+	size: 'full' | 'half';
+	images?: Image[];
+	logo?: Image;
+	context?: string;
+	date?: string;
+}
+
+const { href, title, description, size, images = [], logo, context, date } = Astro.props;
+---
+
+<a href={href} class:list={['glass-card', 'home-project-card', size === 'full' && 'home-project-card-full']}>
+	{images.length > 0 && (
+		<div class:list={['home-project-images', images.length === 1 && 'one-image']}>
+			{images.map((image) => <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" />)}
+		</div>
+	)}
+	<div class="home-project-summary">
+		{logo && <img class="home-project-logo" src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} loading="lazy" />}
+		<div class="home-project-copy">
+			{(context || date) && <div class="home-project-meta">
+				{context && <span>{context}</span>}
+				{date && <span class="home-project-date">{date}</span>}
+			</div>}
+			<h3>{title}</h3>
+			<p>{description}</p>
+		</div>
+	</div>
+</a>
+
+<style>
+	.home-project-card { display: flex; flex-direction: column; min-width: 0; }
+	.home-project-card-full { grid-column: 1 / -1; }
+	.home-project-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem; }
+	.home-project-images.one-image { grid-template-columns: 1fr; }
+	.home-project-images img { display: block; width: 100%; height: 240px; object-fit: cover; background: #fff; border-radius: 8px; }
+	.home-project-card:not(.home-project-card-full) .home-project-images img { height: auto; aspect-ratio: 16 / 9; object-fit: contain; }
+	.home-project-summary { display: flex; align-items: center; gap: 1.5rem; }
+	.home-project-logo { width: 120px; height: 120px; object-fit: contain; border-radius: 8px; flex-shrink: 0; }
+	.home-project-copy { min-width: 0; width: 100%; }
+	.home-project-meta { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; column-gap: 1.5rem; row-gap: 0.25rem; margin-bottom: 0.6rem; color: var(--text-muted); font-size: 0.9em; line-height: 1.4; }
+	.home-project-date { margin-left: auto; text-align: right; }
+	.home-project-card h3 { margin-bottom: 0.5rem; }
+	.home-project-card p { margin: 0; color: var(--text-muted); font-size: 1.05em; }
+	@media (max-width: 540px) {
+		.home-project-summary { align-items: flex-start; gap: 1rem; }
+		.home-project-logo { width: 80px; height: 80px; }
+		.home-project-images img { height: 170px; }
+	}
+</style>
