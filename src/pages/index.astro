@@ -7,7 +7,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 const experience = {
 	href: '/projects/vectorscribe', title: 'VectorScribe', size: 'full' as const,
-	context: 'Software Engineer', date: 'August 2025 - Present',
+	context: 'Software Engineer', date: 'August 2025 – Present',
 	description: 'Building Python software for laser holographic microprinting.',
 	logo: { src: '/assets/images/projects/vectorscribe-logo.png', alt: 'VectorScribe logo', width: 556, height: 376 },
 	images: [
@@ -18,6 +18,18 @@ const experience = {
 
 const projects = [
 	{
+		href: '/projects/logr', title: 'Logr – Social Book Tracking iOS App', size: 'full' as const,
+		context: 'Personal project', date: 'August 2025 – Present',
+		description: 'A native iOS reading journal for tracking books, editions, progress, and the people you read with. Built with SwiftUI, FastAPI, and PostgreSQL.',
+		logo: { src: '/assets/images/projects/logr-icon.webp', alt: 'Logr app icon', width: 320, height: 320 },
+		images: [
+			{ src: '/assets/images/thumbnails/logr-profile.webp', alt: 'Logr profile screen showing favorite books, recent reading activity, and reading stats', width: 645, height: 1323 },
+			{ src: '/assets/images/thumbnails/logr-search.webp', alt: 'Logr search results for "dune" listing Dune books and the author Frank Herbert', width: 645, height: 1323 },
+			{ src: '/assets/images/thumbnails/logr-logs.webp', alt: 'Logr book page for A Game of Thrones showing reading logs and user ratings', width: 645, height: 1323 },
+			{ src: '/assets/images/thumbnails/logr-genre.webp', alt: 'Logr "Classics" list showing a grid of rated book covers', width: 645, height: 1323 },
+		],
+	},
+	{
 		href: '/projects/startup-signals', title: 'NJ Startup Signals', size: 'full' as const,
 		context: 'Stevens Institute of Technology | Business + AI Hackathon | 2nd Place', date: 'September 2026',
 		description: 'A team-built platform for discovering New Jersey startups through public funding, research, and patent signals. I built the backend, data pipelines, database, and API integrations.',
@@ -27,20 +39,14 @@ const projects = [
 		],
 	},
 	{
-		href: '/projects/logr', title: 'Logr - Book Tracking App', size: 'full' as const,
-		context: 'Personal project', date: 'August 2025 - Present',
-		description: 'A native iOS reading journal for tracking books, editions, progress, and the people you read with. Built with SwiftUI, FastAPI, and PostgreSQL.',
-		logo: { src: '/assets/images/projects/logr-icon.webp', alt: 'Logr app icon', width: 320, height: 320 },
-	},
-	{
 		href: '/projects/movie-recommender', title: 'Movie Recommendation Application', size: 'half' as const,
-		context: 'University of Pittsburgh | ADMT Lab', date: 'August - December 2024',
+		context: 'University of Pittsburgh | ADMT Lab', date: 'August – December 2024',
 		description: 'A computer science capstone connecting a natural-language interface, the OpenAI API, and PostgreSQL to manage user profiles, update movie preferences, and retrieve recommendations.',
 		images: [{ src: '/assets/images/thumbnails/movie-architecture.webp', alt: 'Movie chatbot architecture connecting the frontend, Python API, language model, and database', width: 960, height: 540 }],
 	},
 	{
-		href: '/projects/gasp-violations', title: 'Air Quality Dashboard - Visualizing Industrial Impact in Allegheny County', size: 'half' as const,
-		context: 'University of Pittsburgh | GASP', date: 'January - April 2025',
+		href: '/projects/gasp-violations', title: 'Air Quality Dashboard – Visualizing Industrial Impact in Allegheny County', size: 'half' as const,
+		context: 'University of Pittsburgh | GASP', date: 'January – April 2025',
 		description: 'A data analytics capstone project for GASP (Group Against Smog & Pollution) visualizing 5 years of air quality violations and fines from major industrial polluters.',
 		images: [{ src: '/assets/images/thumbnails/gasp-dashboard.webp', alt: 'GASP dashboard with a facility map and air-quality violation charts', width: 960, height: 540 }],
 	},
